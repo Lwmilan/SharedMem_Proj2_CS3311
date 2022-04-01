@@ -1,0 +1,2586 @@
+
+============================ TEST 1 ============================
+
+Quicksort and Binary Merge with Multiple Process:
+
+*** MAIN: qsort shared memory key = 1798323292
+*** MAIN: qsort shared memory created
+*** MAIN: qsort shared memory attached and ready to use
+
+*** MAIN: merge x[] shared memory key = 2016427100
+*** MAIN: merge x[] shared memory created
+*** MAIN: merge x[] shared memory attached and ready to use
+
+*** MAIN: merge y[] shared memory key = 2033204316
+*** MAIN: merge y[] shared memory created
+*** MAIN: merge y[] shared memory attached and ready to use
+
+*** MAIN: merge output shared memory key = 1865432156
+*** MAIN: merge output shared memory created
+*** MAIN: merge output shared memory attached and ready to use
+
+Input array for qsort has 8 elements:
+    4 7 2 9 3 5 8 6 
+
+Input array x[] for merge has 6 elements:
+    1 3 7 15 17 24 
+
+Input array y[] for merge has 5 elements:
+    2 8 16 18 20 
+
+*** MAIN: about to spawn the process for qsort
+*** MAIN: about to spawn the process for merge
+   ### Q-PROC(240682): entering with a[0..7]
+       4  7  2  9  3  5  8  6  
+   ### Q-PROC(240682): pivot element is a[7] = 4
+      $$$ M-PROC(240684): handling x[0] = 1
+      $$$ M-PROC(240684): x[0] = 1 is found to be smaller than y[0] = 2
+      $$$ M-PROC(240684): about to write x[0] = 1 into position 0 of the output array
+      $$$ M-PROC(240688): handling x[2] = 7
+      $$$ M-PROC(240686): handling x[1] = 3
+      $$$ M-PROC(240688): x[2] = 7 is found between y[0] = 2 and y[1] = 8
+      $$$ M-PROC(240688): about to write x[2] = 7 into position 3 of the output array
+      $$$ M-PROC(240686): x[1] = 3 is found between y[0] = 2 and y[1] = 8
+      $$$ M-PROC(240686): about to write x[1] = 3 into position 2 of the output array
+      $$$ M-PROC(240689): handling x[3] = 15
+      $$$ M-PROC(240690): handling x[4] = 17
+      $$$ M-PROC(240691): handling x[5] = 24
+      $$$ M-PROC(240690): x[4] = 17 is found between y[2] = 16 and y[3] = 18
+      $$$ M-PROC(240690): about to write x[4] = 17 into position 7 of the output array
+      $$$ M-PROC(240691): x[5] = 24 is found to be larger than y[4] = 20
+      $$$ M-PROC(240691): about to write x[5] = 24 into position 10 of the output array
+      $$$ M-PROC(240692): handling y[0] = 2
+      $$$ M-PROC(240693): handling y[1] = 8
+      $$$ M-PROC(240694): handling y[2] = 16
+      $$$ M-PROC(240692): y[0] = 2 is found between x[0] = 1 and x[1] = 3
+      $$$ M-PROC(240695): handling y[3] = 18
+      $$$ M-PROC(240693): y[1] = 8 is found between x[2] = 7 and x[3] = 15
+      $$$ M-PROC(240694): y[2] = 16 is found between x[3] = 15 and x[4] = 17
+      $$$ M-PROC(240692): about to write y[0] = 2 into position 1 of the output array
+      $$$ M-PROC(240693): about to write y[1] = 8 into position 4 of the output array
+      $$$ M-PROC(240695): y[3] = 18 is found between x[4] = 17 and x[5] = 24
+      $$$ M-PROC(240694): about to write y[2] = 16 into position 6 of the output array
+      $$$ M-PROC(240695): about to write y[3] = 18 into position 8 of the output array
+      $$$ M-PROC(240696): handling y[4] = 20
+      $$$ M-PROC(240689): x[3] = 15 is found between y[1] = 8 and y[2] = 16
+   ### Q-PROC(240685): entering with a[0..3]
+       4  2  3  5  
+      $$$ M-PROC(240689): about to write x[3] = 15 into position 5 of the output array
+   ### Q-PROC(240687): entering with a[5..7]
+       9  8  7  
+   ### Q-PROC(240685): pivot element is a[3] = 3
+   ### Q-PROC(240687): pivot element is a[7] = 5
+      $$$ M-PROC(240696): y[4] = 20 is found between x[4] = 17 and x[5] = 24
+      $$$ M-PROC(240696): about to write y[4] = 20 into position 9 of the output array
+   ### Q-PROC(240698): exits
+   ### Q-PROC(240699): exits
+   ### Q-PROC(240700): entering with a[6..7]
+       8  9  
+   ### Q-PROC(240700): pivot element is a[7] = 7
+   ### Q-PROC(240697): entering with a[0..2]
+       4  2  3  
+   ### Q-PROC(240697): pivot element is a[2] = 1
+   ### Q-PROC(240702): exits
+   ### Q-PROC(240701): entering with a[6..6]
+       8  
+   ### Q-PROC(240701): section a[6..6] sorted
+       8  
+   ### Q-PROC(240704): entering with a[2..2]
+       4  
+   ### Q-PROC(240703): entering with a[0..0]
+       2  
+   ### Q-PROC(240701): exits
+   ### Q-PROC(240704): section a[2..2] sorted
+       4  
+   ### Q-PROC(240703): section a[0..0] sorted
+       2  
+   ### Q-PROC(240704): exits
+   ### Q-PROC(240703): exits
+   ### Q-PROC(240697): section a[0..2] sorted
+       2  3  4  
+   ### Q-PROC(240700): section a[6..7] sorted
+       8  9  
+   ### Q-PROC(240697): exits
+   ### Q-PROC(240700): exits
+   ### Q-PROC(240687): section a[5..7] sorted
+       7  8  9  
+   ### Q-PROC(240685): section a[0..3] sorted
+       2  3  4  5  
+   ### Q-PROC(240687): exits
+   ### Q-PROC(240685): exits
+   ### Q-PROC(240682): section a[0..7] sorted
+       2  3  4  5  6  7  8  9  
+   ### Q-PROC(240682): exits
+*** MAIN: sorted array by qsort:
+     2 3 4 5 6 7 8 9 
+*** MAIN: merged array:
+     1 2 3 7 8 15 16 17 18 20 24 
+*** MAIN: qsort shared memory successfully detached
+*** MAIN: qsort shared memory successfully removed
+
+*** MAIN: merge x[] shared memory successfully detached
+*** MAIN: merge x[] shared memory successfully removed
+
+*** MAIN: merge y[] shared memory successfully detached
+*** MAIN: merge y[] shared memory successfully removed
+
+*** MAIN: merge output shared memory successfully detached
+*** MAIN: merge output shared memory successfully removed
+
+
+
+============================ TEST 2 ============================
+
+
+Quicksort and Binary Merge with Multiple Process:
+
+*** MAIN: qsort shared memory key = 1798323292
+*** MAIN: qsort shared memory created
+*** MAIN: qsort shared memory attached and ready to use
+
+*** MAIN: merge x[] shared memory key = 2016427100
+*** MAIN: merge x[] shared memory created
+*** MAIN: merge x[] shared memory attached and ready to use
+
+*** MAIN: merge y[] shared memory key = 2033204316
+*** MAIN: merge y[] shared memory created
+*** MAIN: merge y[] shared memory attached and ready to use
+
+*** MAIN: merge output shared memory key = 1865432156
+*** MAIN: merge output shared memory created
+*** MAIN: merge output shared memory attached and ready to use
+
+Input array for qsort has 200 elements:
+    -74 -57 -14 30 -54 18 -44 -37 -40 -47 56 3 -19 -65 5 10 -93 15 24 -62 -90 94 11 -55 -70 -91 92 6 -79 -81 77 17 -46 -3 -59 47 44 91 76 -35 96 -95 95 -42 70 59 -60 60 -87 78 9 54 -64 -76 37 71 99 -86 14 65 28 -23 52 16 -28 63 81 -67 -4 -43 43 -99 80 2 34 -66 -49 -38 -15 -85 45 58 27 50 -16 90 -51 -1 85 -80 51 57 40 -94 -73 82 -2 48 86 -34 42 -18 36 -9 -24 -88 -92 -63 -39 -52 -33 -69 -82 35 -83 13 68 31 74 -13 -58 -7 -45 83 -96 62 12 72 -84 -22 -75 79 -11 0 -97 -41 1 7 -29 39 23 -17 41 46 -6 -78 19 53 21 -98 26 -26 -71 -12 -61 4 -53 -30 100 73 29 98 -25 64 -50 -56 61 -10 87 89 -36 97 84 -68 55 33 93 25 32 69 67 -72 75 20 -32 -5 -8 -21 66 -27 49 -31 38 8 -77 -48 88 -20 -89 22 
+
+Input array x[] for merge has 180 elements:
+    -195 -194 -189 -187 -186 -184 -183 -182 -180 -179 -177 -172 -171 -170 -167 -166 -164 -163 -162 -161 -160 -159 -158 -154 -152 -151 -150 -148 -144 -138 -136 -134 -131 -130 -127 -125 -124 -123 -120 -117 -116 -115 -111 -103 -97 -96 -89 -88 -86 -84 -81 -80 -76 -74 -72 -69 -68 -67 -66 -63 -62 -60 -59 -58 -55 -53 -52 -48 -46 -43 -41 -40 -39 -38 -36 -34 -33 -30 -28 -26 -25 -22 -21 -20 -19 -14 -13 -11 -10 -8 -5 -3 0 4 5 6 7 8 9 12 14 16 19 23 24 25 30 32 33 37 38 42 45 46 47 49 50 53 56 57 58 60 62 68 69 70 74 75 76 77 81 83 87 91 93 95 96 98 99 101 102 104 105 112 113 114 115 118 120 122 123 124 127 128 129 132 133 134 138 141 143 147 149 150 152 159 163 170 171 172 178 179 181 183 186 188 190 192 193 199 
+
+Input array y[] for merge has 220 elements:
+    -199 -198 -197 -196 -193 -192 -191 -190 -188 -185 -181 -178 -176 -175 -174 -173 -169 -168 -165 -157 -156 -155 -153 -149 -147 -146 -145 -143 -142 -141 -140 -139 -137 -135 -133 -132 -129 -128 -126 -122 -121 -119 -118 -114 -113 -112 -110 -109 -108 -107 -106 -105 -104 -102 -101 -100 -99 -98 -95 -94 -93 -92 -91 -90 -87 -85 -83 -82 -79 -78 -77 -75 -73 -71 -70 -65 -64 -61 -57 -56 -54 -51 -50 -49 -47 -45 -44 -42 -37 -35 -32 -31 -29 -27 -24 -23 -18 -17 -16 -15 -12 -9 -7 -6 -4 -2 -1 1 2 3 10 11 13 15 17 18 20 21 22 26 27 28 29 31 34 35 36 39 40 41 43 44 48 51 52 54 55 59 61 63 64 65 66 67 71 72 73 78 79 80 82 84 85 86 88 89 90 92 94 97 100 103 106 107 108 109 110 111 116 117 119 121 125 126 130 131 135 136 137 139 140 142 144 145 146 148 151 153 154 155 156 157 158 160 161 162 164 165 166 167 168 169 173 174 175 176 177 180 182 184 185 187 189 191 194 195 196 197 198 200 
+
+*** MAIN: about to spawn the process for qsort
+*** MAIN: about to spawn the process for merge
+   ### Q-PROC(240710): entering with a[0..199]
+       -74  -57  -14  30  -54  18  -44  -37  -40  -47  56  3  -19  -65  5  10  -93  15  24  -62  -90  94  11  -55  -70  -91  92  6  -79  -81  77  17  -46  -3  -59  47  44  91  76  -35  96  -95  95  -42  70  59  -60  60  -87  78  9  54  -64  -76  37  71  99  -86  14  65  28  -23  52  16  -28  63  81  -67  -4  -43  43  -99  80  2  34  -66  -49  -38  -15  -85  45  58  27  50  -16  90  -51  -1  85  -80  51  57  40  -94  -73  82  -2  48  86  -34  42  -18  36  -9  -24  -88  -92  -63  -39  -52  -33  -69  -82  35  -83  13  68  31  74  -13  -58  -7  -45  83  -96  62  12  72  -84  -22  -75  79  -11  0  -97  -41  1  7  -29  39  23  -17  41  46  -6  -78  19  53  21  -98  26  -26  -71  -12  -61  4  -53  -30  100  73  29  98  -25  64  -50  -56  61  -10  87  89  -36  97  84  -68  55  33  93  25  32  69  67  -72  75  20  -32  -5  -8  -21  66  -27  49  -31  38  8  -77  -48  88  -20  -89  22  
+   ### Q-PROC(240710): pivot element is a[199] = 121
+      $$$ M-PROC(240712): handling x[0] = -195
+      $$$ M-PROC(240712): x[0] = -195 is found between y[3] = -196 and y[4] = -193
+      $$$ M-PROC(240712): about to write x[0] = -195 into position 4 of the output array
+      $$$ M-PROC(240714): handling x[1] = -194
+      $$$ M-PROC(240714): x[1] = -194 is found between y[3] = -196 and y[4] = -193
+      $$$ M-PROC(240714): about to write x[1] = -194 into position 5 of the output array
+      $$$ M-PROC(240716): handling x[2] = -189
+      $$$ M-PROC(240717): handling x[3] = -187
+   ### Q-PROC(240715): entering with a[122..199]
+       24  83  78  62  56  72  54  45  58  79  27  50  47  90  44  37  85  39  23  71  41  46  51  57  40  53  99  91  26  82  76  48  86  65  42  28  100  73  29  98  36  64  30  52  61  96  87  89  77  97  84  63  55  33  93  25  32  69  67  81  75  95  94  70  43  35  66  59  49  80  38  68  31  74  88  92  34  60  
+   ### Q-PROC(240715): pivot element is a[199] = 159
+      $$$ M-PROC(240736): handling x[22] = -158
+      $$$ M-PROC(240736): x[22] = -158 is found between y[18] = -165 and y[19] = -157
+      $$$ M-PROC(240736): about to write x[22] = -158 into position 41 of the output array
+      $$$ M-PROC(240718): handling x[4] = -186
+      $$$ M-PROC(240737): handling x[23] = -154
+      $$$ M-PROC(240718): x[4] = -186 is found between y[8] = -188 and y[9] = -185
+      $$$ M-PROC(240737): x[23] = -154 is found between y[21] = -155 and y[22] = -153
+      $$$ M-PROC(240718): about to write x[4] = -186 into position 13 of the output array
+      $$$ M-PROC(240737): about to write x[23] = -154 into position 45 of the output array
+      $$$ M-PROC(240719): handling x[5] = -184
+      $$$ M-PROC(240719): x[5] = -184 is found between y[9] = -185 and y[10] = -181
+      $$$ M-PROC(240720): handling x[6] = -183
+      $$$ M-PROC(240738): handling x[24] = -152
+      $$$ M-PROC(240719): about to write x[5] = -184 into position 15 of the output array
+      $$$ M-PROC(240746): handling x[30] = -136
+      $$$ M-PROC(240721): handling x[7] = -182
+      $$$ M-PROC(240722): handling x[8] = -180
+      $$$ M-PROC(240763): handling x[47] = -88
+      $$$ M-PROC(240722): x[8] = -180 is found between y[10] = -181 and y[11] = -178
+      $$$ M-PROC(240763): x[47] = -88 is found between y[63] = -90 and y[64] = -87
+      $$$ M-PROC(240722): about to write x[8] = -180 into position 19 of the output array
+      $$$ M-PROC(240763): about to write x[47] = -88 into position 111 of the output array
+      $$$ M-PROC(240716): x[2] = -189 is found between y[7] = -190 and y[8] = -188
+      $$$ M-PROC(240723): handling x[9] = -179
+      $$$ M-PROC(240716): about to write x[2] = -189 into position 10 of the output array
+      $$$ M-PROC(240764): handling x[48] = -86
+      $$$ M-PROC(240723): x[9] = -179 is found between y[10] = -181 and y[11] = -178
+      $$$ M-PROC(240764): x[48] = -86 is found between y[64] = -87 and y[65] = -85
+      $$$ M-PROC(240723): about to write x[9] = -179 into position 20 of the output array
+      $$$ M-PROC(240764): about to write x[48] = -86 into position 113 of the output array
+      $$$ M-PROC(240724): handling x[10] = -177
+      $$$ M-PROC(240765): handling x[49] = -84
+      $$$ M-PROC(240765): x[49] = -84 is found between y[65] = -85 and y[66] = -83
+      $$$ M-PROC(240724): x[10] = -177 is found between y[11] = -178 and y[12] = -176
+      $$$ M-PROC(240765): about to write x[49] = -84 into position 115 of the output array
+      $$$ M-PROC(240772): handling x[56] = -68
+      $$$ M-PROC(240772): x[56] = -68 is found between y[74] = -70 and y[75] = -65
+      $$$ M-PROC(240783): handling x[67] = -48
+      $$$ M-PROC(240789): handling x[73] = -38
+      $$$ M-PROC(240725): handling x[11] = -172
+      $$$ M-PROC(240789): x[73] = -38 is found between y[87] = -42 and y[88] = -37
+      $$$ M-PROC(240783): x[67] = -48 is found between y[83] = -49 and y[84] = -47
+      $$$ M-PROC(240789): about to write x[73] = -38 into position 161 of the output array
+      $$$ M-PROC(240790): handling x[74] = -36
+      $$$ M-PROC(240783): about to write x[67] = -48 into position 151 of the output array
+      $$$ M-PROC(240726): handling x[12] = -171
+      $$$ M-PROC(240725): x[11] = -172 is found between y[15] = -173 and y[16] = -169
+      $$$ M-PROC(240790): x[74] = -36 is found between y[88] = -37 and y[89] = -35
+      $$$ M-PROC(240725): about to write x[11] = -172 into position 27 of the output array
+      $$$ M-PROC(240790): about to write x[74] = -36 into position 163 of the output array
+      $$$ M-PROC(240726): x[12] = -171 is found between y[15] = -173 and y[16] = -169
+      $$$ M-PROC(240726): about to write x[12] = -171 into position 28 of the output array
+      $$$ M-PROC(240727): handling x[13] = -170
+      $$$ M-PROC(240728): handling x[14] = -167
+      $$$ M-PROC(240791): handling x[75] = -34
+      $$$ M-PROC(240727): x[13] = -170 is found between y[15] = -173 and y[16] = -169
+      $$$ M-PROC(240727): about to write x[13] = -170 into position 29 of the output array
+      $$$ M-PROC(240791): x[75] = -34 is found between y[89] = -35 and y[90] = -32
+      $$$ M-PROC(240728): x[14] = -167 is found between y[17] = -168 and y[18] = -165
+      $$$ M-PROC(240791): about to write x[75] = -34 into position 165 of the output array
+      $$$ M-PROC(240728): about to write x[14] = -167 into position 32 of the output array
+      $$$ M-PROC(240729): handling x[15] = -166
+      $$$ M-PROC(240792): handling x[76] = -33
+      $$$ M-PROC(240730): handling x[16] = -164
+      $$$ M-PROC(240808): handling x[92] = 0
+      $$$ M-PROC(240817): handling x[101] = 16
+      $$$ M-PROC(240817): x[101] = 16 is found between y[113] = 15 and y[114] = 17
+      $$$ M-PROC(240817): about to write x[101] = 16 into position 215 of the output array
+      $$$ M-PROC(240838): handling x[122] = 62
+      $$$ M-PROC(240838): x[122] = 62 is found between y[138] = 61 and y[139] = 63
+      $$$ M-PROC(240838): about to write x[122] = 62 into position 261 of the output array
+      $$$ M-PROC(240717): x[3] = -187 is found between y[8] = -188 and y[9] = -185
+      $$$ M-PROC(240731): handling x[17] = -163
+      $$$ M-PROC(240717): about to write x[3] = -187 into position 12 of the output array
+   ### Q-PROC(240713): entering with a[0..120]
+       -74  -57  -14  -54  18  -44  -37  -40  -47  3  -19  -65  5  10  -93  15  -62  -90  11  -55  -70  -91  6  -79  -81  17  -46  -3  -59  -35  -95  -42  -60  -87  9  -64  -76  -86  14  -23  16  -28  -67  -4  -43  -99  2  -66  -49  -38  -15  -85  -16  -51  -1  -80  -94  -73  -2  -34  -18  -9  -24  -88  -92  -63  -39  -52  -33  -69  -82  -83  13  -13  -58  -7  -45  -96  12  -84  -22  -75  -11  0  -97  -41  1  7  -29  -17  -6  -78  19  21  -98  -26  -71  -12  -61  4  -53  -30  -25  -50  -56  -10  -36  -68  -72  20  -32  -5  -8  -21  -27  -31  8  -77  -48  -20  -89  
+      $$$ M-PROC(240731): x[17] = -163 is found between y[18] = -165 and y[19] = -157
+      $$$ M-PROC(240731): about to write x[17] = -163 into position 36 of the output array
+   ### Q-PROC(240713): pivot element is a[120] = 10
+      $$$ M-PROC(240839): handling x[123] = 68
+      $$$ M-PROC(240732): handling x[18] = -162
+      $$$ M-PROC(240839): x[123] = 68 is found between y[143] = 67 and y[144] = 71
+      $$$ M-PROC(240851): handling x[133] = 91
+      $$$ M-PROC(240861): handling x[143] = 112
+      $$$ M-PROC(240851): x[133] = 91 is found between y[156] = 90 and y[157] = 92
+      $$$ M-PROC(240861): x[143] = 112 is found between y[167] = 111 and y[168] = 116
+      $$$ M-PROC(240851): about to write x[133] = 91 into position 290 of the output array
+      $$$ M-PROC(240861): about to write x[143] = 112 into position 311 of the output array
+      $$$ M-PROC(240733): handling x[19] = -161
+      $$$ M-PROC(240862): handling x[144] = 113
+      $$$ M-PROC(240862): x[144] = 113 is found between y[167] = 111 and y[168] = 116
+      $$$ M-PROC(240733): x[19] = -161 is found between y[18] = -165 and y[19] = -157
+      $$$ M-PROC(240862): about to write x[144] = 113 into position 312 of the output array
+      $$$ M-PROC(240733): about to write x[19] = -161 into position 38 of the output array
+      $$$ M-PROC(240734): handling x[20] = -160
+      $$$ M-PROC(240863): handling x[145] = 114
+      $$$ M-PROC(240735): handling x[21] = -159
+      $$$ M-PROC(240734): x[20] = -160 is found between y[18] = -165 and y[19] = -157
+      $$$ M-PROC(240863): x[145] = 114 is found between y[167] = 111 and y[168] = 116
+      $$$ M-PROC(240734): about to write x[20] = -160 into position 39 of the output array
+      $$$ M-PROC(240863): about to write x[145] = 114 into position 313 of the output array
+      $$$ M-PROC(240735): x[21] = -159 is found between y[18] = -165 and y[19] = -157
+      $$$ M-PROC(240735): about to write x[21] = -159 into position 40 of the output array
+      $$$ M-PROC(240738): x[24] = -152 is found between y[22] = -153 and y[23] = -149
+      $$$ M-PROC(240881): handling x[163] = 150
+      $$$ M-PROC(240720): x[6] = -183 is found between y[9] = -185 and y[10] = -181
+      $$$ M-PROC(240906): handling y[8] = -188
+      $$$ M-PROC(240906): y[8] = -188 is found between x[2] = -189 and x[3] = -187
+      $$$ M-PROC(240906): about to write y[8] = -188 into position 11 of the output array
+      $$$ M-PROC(240915): handling y[17] = -168
+      $$$ M-PROC(240739): handling x[25] = -151
+      $$$ M-PROC(240915): y[17] = -168 is found between x[13] = -170 and x[14] = -167
+      $$$ M-PROC(240916): handling y[18] = -165
+      $$$ M-PROC(240741): handling x[26] = -150
+      $$$ M-PROC(240915): about to write y[17] = -168 into position 31 of the output array
+      $$$ M-PROC(240916): y[18] = -165 is found between x[15] = -166 and x[16] = -164
+      $$$ M-PROC(240739): x[25] = -151 is found between y[22] = -153 and y[23] = -149
+      $$$ M-PROC(240916): about to write y[18] = -165 into position 34 of the output array
+      $$$ M-PROC(240739): about to write x[25] = -151 into position 48 of the output array
+      $$$ M-PROC(240741): x[26] = -150 is found between y[22] = -153 and y[23] = -149
+      $$$ M-PROC(240743): handling x[27] = -148
+      $$$ M-PROC(240741): about to write x[26] = -150 into position 49 of the output array
+      $$$ M-PROC(240917): handling y[19] = -157
+      $$$ M-PROC(240743): x[27] = -148 is found between y[23] = -149 and y[24] = -147
+      $$$ M-PROC(240917): y[19] = -157 is found between x[22] = -158 and x[23] = -154
+      $$$ M-PROC(240917): about to write y[19] = -157 into position 42 of the output array
+      $$$ M-PROC(240743): about to write x[27] = -148 into position 51 of the output array
+      $$$ M-PROC(240744): handling x[28] = -144
+      $$$ M-PROC(240927): handling y[29] = -141
+      $$$ M-PROC(240745): handling x[29] = -138
+      $$$ M-PROC(240947): handling y[49] = -107
+      $$$ M-PROC(240747): handling x[31] = -134
+      $$$ M-PROC(240947): y[49] = -107 is found between x[42] = -111 and x[43] = -103
+      $$$ M-PROC(240745): x[29] = -138 is found between y[31] = -139 and y[32] = -137
+      $$$ M-PROC(240947): about to write y[49] = -107 into position 92 of the output array
+      $$$ M-PROC(240948): handling y[50] = -106
+      $$$ M-PROC(240745): about to write x[29] = -138 into position 61 of the output array
+      $$$ M-PROC(240747): x[31] = -134 is found between y[33] = -135 and y[34] = -133
+      $$$ M-PROC(240948): y[50] = -106 is found between x[42] = -111 and x[43] = -103
+      $$$ M-PROC(240748): handling x[32] = -131
+      $$$ M-PROC(240948): about to write y[50] = -106 into position 93 of the output array
+      $$$ M-PROC(240747): about to write x[31] = -134 into position 65 of the output array
+      $$$ M-PROC(240749): handling x[33] = -130
+      $$$ M-PROC(240748): x[32] = -131 is found between y[35] = -132 and y[36] = -129
+      $$$ M-PROC(240750): handling x[34] = -127
+      $$$ M-PROC(240949): handling y[51] = -105
+      $$$ M-PROC(240748): about to write x[32] = -131 into position 68 of the output array
+      $$$ M-PROC(240749): x[33] = -130 is found between y[35] = -132 and y[36] = -129
+      $$$ M-PROC(240949): y[51] = -105 is found between x[42] = -111 and x[43] = -103
+      $$$ M-PROC(240751): handling x[35] = -125
+      $$$ M-PROC(240746): x[30] = -136 is found between y[32] = -137 and y[33] = -135
+      $$$ M-PROC(240968): handling y[70] = -77
+      $$$ M-PROC(240968): y[70] = -77 is found between x[51] = -80 and x[52] = -76
+      $$$ M-PROC(240746): about to write x[30] = -136 into position 63 of the output array
+      $$$ M-PROC(240980): handling y[82] = -50
+      $$$ M-PROC(240980): y[82] = -50 is found between x[66] = -52 and x[67] = -48
+      $$$ M-PROC(240752): handling x[36] = -124
+      $$$ M-PROC(240980): about to write y[82] = -50 into position 149 of the output array
+      $$$ M-PROC(240981): handling y[83] = -49
+      $$$ M-PROC(240981): y[83] = -49 is found between x[66] = -52 and x[67] = -48
+      $$$ M-PROC(240981): about to write y[83] = -49 into position 150 of the output array
+      $$$ M-PROC(240753): handling x[37] = -123
+      $$$ M-PROC(240752): x[36] = -124 is found between y[38] = -126 and y[39] = -122
+      $$$ M-PROC(240752): about to write x[36] = -124 into position 75 of the output array
+      $$$ M-PROC(240753): x[37] = -123 is found between y[38] = -126 and y[39] = -122
+      $$$ M-PROC(240992): handling y[94] = -24
+      $$$ M-PROC(240754): handling x[38] = -120
+      $$$ M-PROC(241013): handling y[115] = 18
+      $$$ M-PROC(240755): handling x[39] = -117
+      $$$ M-PROC(241013): y[115] = 18 is found between x[101] = 16 and x[102] = 19
+      $$$ M-PROC(241013): about to write y[115] = 18 into position 217 of the output array
+      $$$ M-PROC(240754): x[38] = -120 is found between y[40] = -121 and y[41] = -119
+      $$$ M-PROC(240755): x[39] = -117 is found between y[42] = -118 and y[43] = -114
+      $$$ M-PROC(240755): about to write x[39] = -117 into position 82 of the output array
+      $$$ M-PROC(240754): about to write x[38] = -120 into position 79 of the output array
+      $$$ M-PROC(240756): handling x[40] = -116
+      $$$ M-PROC(241014): handling y[116] = 20
+      $$$ M-PROC(241014): y[116] = 20 is found between x[102] = 19 and x[103] = 23
+      $$$ M-PROC(241014): about to write y[116] = 20 into position 219 of the output array
+      $$$ M-PROC(240756): x[40] = -116 is found between y[42] = -118 and y[43] = -114
+   ### Q-PROC(240740): entering with a[122..158]
+       24  56  54  45  58  27  50  47  44  37  39  23  41  46  51  57  40  53  26  48  42  28  29  36  30  52  55  33  25  32  43  35  59  49  38  31  34  
+      $$$ M-PROC(240756): about to write x[40] = -116 into position 83 of the output array
+      $$$ M-PROC(240757): handling x[41] = -115
+      $$$ M-PROC(240721): x[7] = -182 is found between y[9] = -185 and y[10] = -181
+      $$$ M-PROC(240758): handling x[42] = -111
+      $$$ M-PROC(240721): about to write x[7] = -182 into position 17 of the output array
+      $$$ M-PROC(240758): x[42] = -111 is found between y[45] = -112 and y[46] = -110
+      $$$ M-PROC(240758): about to write x[42] = -111 into position 88 of the output array
+   ### Q-PROC(240742): entering with a[160..199]
+       83  98  79  64  85  72  61  96  87  89  77  97  84  63  99  91  93  78  82  69  67  81  75  95  94  70  76  71  66  86  65  80  62  68  90  74  88  92  100  73  
+      $$$ M-PROC(241050): handling y[152] = 85
+   ### Q-PROC(240742): pivot element is a[199] = 172
+      $$$ M-PROC(241050): y[152] = 85 is found between x[131] = 83 and x[132] = 87
+      $$$ M-PROC(241050): about to write y[152] = 85 into position 284 of the output array
+      $$$ M-PROC(240759): handling x[43] = -103
+      $$$ M-PROC(240760): handling x[44] = -97
+      $$$ M-PROC(240759): x[43] = -103 is found between y[52] = -104 and y[53] = -102
+      $$$ M-PROC(240759): about to write x[43] = -103 into position 96 of the output array
+      $$$ M-PROC(241051): handling y[153] = 86
+      $$$ M-PROC(240761): handling x[45] = -96
+      $$$ M-PROC(240760): x[44] = -97 is found between y[57] = -98 and y[58] = -95
+      $$$ M-PROC(241051): y[153] = 86 is found between x[131] = 83 and x[132] = 87
+      $$$ M-PROC(241051): about to write y[153] = 86 into position 285 of the output array
+      $$$ M-PROC(241077): handling y[177] = 136
+      $$$ M-PROC(240762): handling x[46] = -89
+      $$$ M-PROC(241100): handling y[200] = 168
+      $$$ M-PROC(240724): about to write x[10] = -177 into position 22 of the output array
+      $$$ M-PROC(241100): y[200] = 168 is found between x[166] = 163 and x[167] = 170
+      $$$ M-PROC(240762): x[46] = -89 is found between y[63] = -90 and y[64] = -87
+      $$$ M-PROC(241100): about to write y[200] = 168 into position 367 of the output array
+      $$$ M-PROC(240766): handling x[50] = -81
+      $$$ M-PROC(240762): about to write x[46] = -89 into position 110 of the output array
+      $$$ M-PROC(240766): x[50] = -81 is found between y[67] = -82 and y[68] = -79
+      $$$ M-PROC(241101): handling y[201] = 169
+      $$$ M-PROC(240767): handling x[51] = -80
+      $$$ M-PROC(241101): y[201] = 169 is found between x[166] = 163 and x[167] = 170
+      $$$ M-PROC(240766): about to write x[50] = -81 into position 118 of the output array
+      $$$ M-PROC(241101): about to write y[201] = 169 into position 368 of the output array
+      $$$ M-PROC(240768): handling x[52] = -76
+      $$$ M-PROC(240769): handling x[53] = -74
+      $$$ M-PROC(240770): handling x[54] = -72
+      $$$ M-PROC(240771): handling x[55] = -69
+      $$$ M-PROC(240770): x[54] = -72 is found between y[72] = -73 and y[73] = -71
+      $$$ M-PROC(240770): about to write x[54] = -72 into position 127 of the output array
+      $$$ M-PROC(240771): x[55] = -69 is found between y[74] = -70 and y[75] = -65
+      $$$ M-PROC(240773): handling x[57] = -67
+      $$$ M-PROC(240771): about to write x[55] = -69 into position 130 of the output array
+      $$$ M-PROC(240774): handling x[58] = -66
+      $$$ M-PROC(240773): x[57] = -67 is found between y[74] = -70 and y[75] = -65
+      $$$ M-PROC(240773): about to write x[57] = -67 into position 132 of the output array
+      $$$ M-PROC(240775): handling x[59] = -63
+      $$$ M-PROC(240774): x[58] = -66 is found between y[74] = -70 and y[75] = -65
+      $$$ M-PROC(240776): handling x[60] = -62
+      $$$ M-PROC(240774): about to write x[58] = -66 into position 133 of the output array
+      $$$ M-PROC(240777): handling x[61] = -60
+      $$$ M-PROC(240777): x[61] = -60 is found between y[77] = -61 and y[78] = -57
+      $$$ M-PROC(240778): handling x[62] = -59
+      $$$ M-PROC(240777): about to write x[61] = -60 into position 139 of the output array
+      $$$ M-PROC(240779): handling x[63] = -58
+      $$$ M-PROC(240778): x[62] = -59 is found between y[77] = -61 and y[78] = -57
+      $$$ M-PROC(240780): handling x[64] = -55
+      $$$ M-PROC(240779): x[63] = -58 is found between y[77] = -61 and y[78] = -57
+      $$$ M-PROC(240778): about to write x[62] = -59 into position 140 of the output array
+      $$$ M-PROC(240779): about to write x[63] = -58 into position 141 of the output array
+      $$$ M-PROC(240781): handling x[65] = -53
+      $$$ M-PROC(240780): x[64] = -55 is found between y[79] = -56 and y[80] = -54
+      $$$ M-PROC(240782): handling x[66] = -52
+      $$$ M-PROC(240780): about to write x[64] = -55 into position 144 of the output array
+      $$$ M-PROC(240781): x[65] = -53 is found between y[80] = -54 and y[81] = -51
+      $$$ M-PROC(240772): about to write x[56] = -68 into position 131 of the output array
+      $$$ M-PROC(240781): about to write x[65] = -53 into position 146 of the output array
+      $$$ M-PROC(240782): x[66] = -52 is found between y[80] = -54 and y[81] = -51
+      $$$ M-PROC(240782): about to write x[66] = -52 into position 147 of the output array
+      $$$ M-PROC(240784): handling x[68] = -46
+      $$$ M-PROC(240785): handling x[69] = -43
+      $$$ M-PROC(240786): handling x[70] = -41
+      $$$ M-PROC(240787): handling x[71] = -40
+      $$$ M-PROC(240788): handling x[72] = -39
+      $$$ M-PROC(240787): x[71] = -40 is found between y[87] = -42 and y[88] = -37
+      $$$ M-PROC(240788): x[72] = -39 is found between y[87] = -42 and y[88] = -37
+      $$$ M-PROC(240788): about to write x[72] = -39 into position 160 of the output array
+      $$$ M-PROC(240787): about to write x[71] = -40 into position 159 of the output array
+      $$$ M-PROC(240729): x[15] = -166 is found between y[17] = -168 and y[18] = -165
+      $$$ M-PROC(240793): handling x[77] = -30
+      $$$ M-PROC(240729): about to write x[15] = -166 into position 33 of the output array
+      $$$ M-PROC(240794): handling x[78] = -28
+      $$$ M-PROC(240793): x[77] = -30 is found between y[91] = -31 and y[92] = -29
+      $$$ M-PROC(240793): about to write x[77] = -30 into position 169 of the output array
+      $$$ M-PROC(240795): handling x[79] = -26
+      $$$ M-PROC(240796): handling x[80] = -25
+      $$$ M-PROC(240797): handling x[81] = -22
+      $$$ M-PROC(240798): handling x[82] = -21
+      $$$ M-PROC(240797): x[81] = -22 is found between y[95] = -23 and y[96] = -18
+      $$$ M-PROC(240797): about to write x[81] = -22 into position 177 of the output array
+      $$$ M-PROC(240799): handling x[83] = -20
+      $$$ M-PROC(240798): x[82] = -21 is found between y[95] = -23 and y[96] = -18
+      $$$ M-PROC(240792): x[76] = -33 is found between y[89] = -35 and y[90] = -32
+      $$$ M-PROC(240799): x[83] = -20 is found between y[95] = -23 and y[96] = -18
+      $$$ M-PROC(240798): about to write x[82] = -21 into position 178 of the output array
+      $$$ M-PROC(240799): about to write x[83] = -20 into position 179 of the output array
+      $$$ M-PROC(240800): handling x[84] = -19
+      $$$ M-PROC(240792): about to write x[76] = -33 into position 166 of the output array
+      $$$ M-PROC(240801): handling x[85] = -14
+      $$$ M-PROC(240800): x[84] = -19 is found between y[95] = -23 and y[96] = -18
+      $$$ M-PROC(240800): about to write x[84] = -19 into position 180 of the output array
+      $$$ M-PROC(240802): handling x[86] = -13
+      $$$ M-PROC(240801): x[85] = -14 is found between y[99] = -15 and y[100] = -12
+      $$$ M-PROC(240801): about to write x[85] = -14 into position 185 of the output array
+      $$$ M-PROC(240803): handling x[87] = -11
+      $$$ M-PROC(240802): x[86] = -13 is found between y[99] = -15 and y[100] = -12
+      $$$ M-PROC(240802): about to write x[86] = -13 into position 186 of the output array
+      $$$ M-PROC(240804): handling x[88] = -10
+      $$$ M-PROC(240803): x[87] = -11 is found between y[100] = -12 and y[101] = -9
+      $$$ M-PROC(240803): about to write x[87] = -11 into position 188 of the output array
+      $$$ M-PROC(240804): x[88] = -10 is found between y[100] = -12 and y[101] = -9
+      $$$ M-PROC(240805): handling x[89] = -8
+      $$$ M-PROC(240806): handling x[90] = -5
+      $$$ M-PROC(240807): handling x[91] = -3
+      $$$ M-PROC(240730): x[16] = -164 is found between y[18] = -165 and y[19] = -157
+      $$$ M-PROC(240807): x[91] = -3 is found between y[104] = -4 and y[105] = -2
+      $$$ M-PROC(240807): about to write x[91] = -3 into position 196 of the output array
+      $$$ M-PROC(240809): handling x[93] = 4
+      $$$ M-PROC(240730): about to write x[16] = -164 into position 35 of the output array
+      $$$ M-PROC(240810): handling x[94] = 5
+      $$$ M-PROC(240809): x[93] = 4 is found between y[109] = 3 and y[110] = 10
+      $$$ M-PROC(240810): x[94] = 5 is found between y[109] = 3 and y[110] = 10
+      $$$ M-PROC(240811): handling x[95] = 6
+      $$$ M-PROC(240809): about to write x[93] = 4 into position 203 of the output array
+      $$$ M-PROC(240810): about to write x[94] = 5 into position 204 of the output array
+      $$$ M-PROC(240812): handling x[96] = 7
+      $$$ M-PROC(240811): x[95] = 6 is found between y[109] = 3 and y[110] = 10
+      $$$ M-PROC(240813): handling x[97] = 8
+      $$$ M-PROC(240814): handling x[98] = 9
+      $$$ M-PROC(240814): x[98] = 9 is found between y[109] = 3 and y[110] = 10
+      $$$ M-PROC(240815): handling x[99] = 12
+      $$$ M-PROC(240814): about to write x[98] = 9 into position 208 of the output array
+      $$$ M-PROC(240816): handling x[100] = 14
+      $$$ M-PROC(240815): x[99] = 12 is found between y[111] = 11 and y[112] = 13
+      $$$ M-PROC(240815): about to write x[99] = 12 into position 211 of the output array
+      $$$ M-PROC(240808): x[92] = 0 is found between y[106] = -1 and y[107] = 1
+      $$$ M-PROC(240816): x[100] = 14 is found between y[112] = 13 and y[113] = 15
+      $$$ M-PROC(240818): handling x[102] = 19
+      $$$ M-PROC(240816): about to write x[100] = 14 into position 213 of the output array
+      $$$ M-PROC(240808): about to write x[92] = 0 into position 199 of the output array
+      $$$ M-PROC(240819): handling x[103] = 23
+      $$$ M-PROC(240820): handling x[104] = 24
+      $$$ M-PROC(240821): handling x[105] = 25
+      $$$ M-PROC(240822): handling x[106] = 30
+      $$$ M-PROC(240821): x[105] = 25 is found between y[118] = 22 and y[119] = 26
+      $$$ M-PROC(240821): about to write x[105] = 25 into position 224 of the output array
+      $$$ M-PROC(240823): handling x[107] = 32
+      $$$ M-PROC(240822): x[106] = 30 is found between y[122] = 29 and y[123] = 31
+      $$$ M-PROC(240822): about to write x[106] = 30 into position 229 of the output array
+      $$$ M-PROC(240823): x[107] = 32 is found between y[123] = 31 and y[124] = 34
+      $$$ M-PROC(240824): handling x[108] = 33
+      $$$ M-PROC(240823): about to write x[107] = 32 into position 231 of the output array
+      $$$ M-PROC(240825): handling x[109] = 37
+      $$$ M-PROC(240824): x[108] = 33 is found between y[123] = 31 and y[124] = 34
+      $$$ M-PROC(240824): about to write x[108] = 33 into position 232 of the output array
+      $$$ M-PROC(240825): x[109] = 37 is found between y[126] = 36 and y[127] = 39
+      $$$ M-PROC(240826): handling x[110] = 38
+      $$$ M-PROC(240825): about to write x[109] = 37 into position 236 of the output array
+      $$$ M-PROC(240827): handling x[111] = 42
+      $$$ M-PROC(240828): handling x[112] = 45
+      $$$ M-PROC(240829): handling x[113] = 46
+      $$$ M-PROC(240828): x[112] = 45 is found between y[131] = 44 and y[132] = 48
+      $$$ M-PROC(240828): about to write x[112] = 45 into position 244 of the output array
+      $$$ M-PROC(240830): handling x[114] = 47
+      $$$ M-PROC(240829): x[113] = 46 is found between y[131] = 44 and y[132] = 48
+      $$$ M-PROC(240829): about to write x[113] = 46 into position 245 of the output array
+      $$$ M-PROC(240831): handling x[115] = 49
+      $$$ M-PROC(240830): x[114] = 47 is found between y[131] = 44 and y[132] = 48
+      $$$ M-PROC(240832): handling x[116] = 50
+      $$$ M-PROC(240831): x[115] = 49 is found between y[132] = 48 and y[133] = 51
+      $$$ M-PROC(240830): about to write x[114] = 47 into position 246 of the output array
+      $$$ M-PROC(240833): handling x[117] = 53
+      $$$ M-PROC(240832): x[116] = 50 is found between y[132] = 48 and y[133] = 51
+      $$$ M-PROC(240832): about to write x[116] = 50 into position 249 of the output array
+      $$$ M-PROC(240831): about to write x[115] = 49 into position 248 of the output array
+      $$$ M-PROC(240833): x[117] = 53 is found between y[134] = 52 and y[135] = 54
+      $$$ M-PROC(240833): about to write x[117] = 53 into position 252 of the output array
+      $$$ M-PROC(240834): handling x[118] = 56
+      $$$ M-PROC(240834): x[118] = 56 is found between y[136] = 55 and y[137] = 59
+      $$$ M-PROC(240835): handling x[119] = 57
+      $$$ M-PROC(240836): handling x[120] = 58
+      $$$ M-PROC(240837): handling x[121] = 60
+      $$$ M-PROC(240732): x[18] = -162 is found between y[18] = -165 and y[19] = -157
+      $$$ M-PROC(240732): about to write x[18] = -162 into position 37 of the output array
+      $$$ M-PROC(240840): handling x[124] = 69
+      $$$ M-PROC(240841): handling x[125] = 70
+      $$$ M-PROC(240840): x[124] = 69 is found between y[143] = 67 and y[144] = 71
+      $$$ M-PROC(240840): about to write x[124] = 69 into position 268 of the output array
+      $$$ M-PROC(240843): handling x[127] = 75
+      $$$ M-PROC(240841): x[125] = 70 is found between y[143] = 67 and y[144] = 71
+      $$$ M-PROC(240841): about to write x[125] = 70 into position 269 of the output array
+      $$$ M-PROC(240842): handling x[126] = 74
+      $$$ M-PROC(240843): x[127] = 75 is found between y[146] = 73 and y[147] = 78
+      $$$ M-PROC(240843): about to write x[127] = 75 into position 274 of the output array
+      $$$ M-PROC(240842): x[126] = 74 is found between y[146] = 73 and y[147] = 78
+      $$$ M-PROC(240845): handling x[128] = 76
+      $$$ M-PROC(240842): about to write x[126] = 74 into position 273 of the output array
+      $$$ M-PROC(240847): handling x[129] = 77
+      $$$ M-PROC(240848): handling x[130] = 81
+      $$$ M-PROC(240848): x[130] = 81 is found between y[149] = 80 and y[150] = 82
+      $$$ M-PROC(240849): handling x[131] = 83
+      $$$ M-PROC(240848): about to write x[130] = 81 into position 280 of the output array
+      $$$ M-PROC(240850): handling x[132] = 87
+      $$$ M-PROC(240849): x[131] = 83 is found between y[150] = 82 and y[151] = 84
+      $$$ M-PROC(240850): x[132] = 87 is found between y[153] = 86 and y[154] = 88
+      $$$ M-PROC(240839): about to write x[123] = 68 into position 267 of the output array
+      $$$ M-PROC(240850): about to write x[132] = 87 into position 286 of the output array
+      $$$ M-PROC(240849): about to write x[131] = 83 into position 282 of the output array
+      $$$ M-PROC(240852): handling x[134] = 93
+      $$$ M-PROC(240853): handling x[135] = 95
+      $$$ M-PROC(240852): x[134] = 93 is found between y[157] = 92 and y[158] = 94
+      $$$ M-PROC(240852): about to write x[134] = 93 into position 292 of the output array
+      $$$ M-PROC(240854): handling x[136] = 96
+      $$$ M-PROC(240853): x[135] = 95 is found between y[158] = 94 and y[159] = 97
+      $$$ M-PROC(240855): handling x[137] = 98
+      $$$ M-PROC(240856): handling x[138] = 99
+      $$$ M-PROC(240857): handling x[139] = 101
+      $$$ M-PROC(240858): handling x[140] = 102
+      $$$ M-PROC(240859): handling x[141] = 104
+      $$$ M-PROC(240858): x[140] = 102 is found between y[160] = 100 and y[161] = 103
+      $$$ M-PROC(240858): about to write x[140] = 102 into position 301 of the output array
+      $$$ M-PROC(240860): handling x[142] = 105
+      $$$ M-PROC(240859): x[141] = 104 is found between y[161] = 103 and y[162] = 106
+      $$$ M-PROC(240859): about to write x[141] = 104 into position 303 of the output array
+      $$$ M-PROC(240864): handling x[146] = 115
+      $$$ M-PROC(240860): x[142] = 105 is found between y[161] = 103 and y[162] = 106
+      $$$ M-PROC(240860): about to write x[142] = 105 into position 304 of the output array
+      $$$ M-PROC(240865): handling x[147] = 118
+      $$$ M-PROC(240864): x[146] = 115 is found between y[167] = 111 and y[168] = 116
+      $$$ M-PROC(240864): about to write x[146] = 115 into position 314 of the output array
+      $$$ M-PROC(240866): handling x[148] = 120
+      $$$ M-PROC(240865): x[147] = 118 is found between y[169] = 117 and y[170] = 119
+      $$$ M-PROC(240865): about to write x[147] = 118 into position 317 of the output array
+      $$$ M-PROC(240867): handling x[149] = 122
+      $$$ M-PROC(240866): x[148] = 120 is found between y[170] = 119 and y[171] = 121
+      $$$ M-PROC(240866): about to write x[148] = 120 into position 319 of the output array
+      $$$ M-PROC(240868): handling x[150] = 123
+      $$$ M-PROC(240867): x[149] = 122 is found between y[171] = 121 and y[172] = 125
+      $$$ M-PROC(240867): about to write x[149] = 122 into position 321 of the output array
+      $$$ M-PROC(240868): x[150] = 123 is found between y[171] = 121 and y[172] = 125
+      $$$ M-PROC(240868): about to write x[150] = 123 into position 322 of the output array
+   ### Q-PROC(240844): entering with a[0..9]
+       -93  -90  -91  -95  -99  -94  -92  -96  -97  -98  
+   ### Q-PROC(240846): entering with a[11..120]
+       -65  5  10  -74  15  -62  -57  11  -55  -70  -14  6  -79  -81  17  -46  -3  -59  -35  -54  -42  -60  -87  9  -64  -76  -86  14  -23  16  -28  -67  -4  -43  18  2  -66  -49  -38  -15  -85  -16  -51  -1  -80  -44  -73  -2  -34  -18  -9  -24  -88  -37  -63  -39  -52  -33  -69  -82  -83  13  -13  -58  -7  -45  -40  12  -84  -22  -75  -11  0  -47  -41  1  7  -29  -17  -6  -78  19  21  3  -26  -71  -12  -61  4  -53  -30  -25  -50  -56  -10  -36  -68  -72  20  -32  -5  -8  -21  -27  -31  8  -77  -48  -20  -19  
+   ### Q-PROC(240846): pivot element is a[120] = 80
+      $$$ M-PROC(240869): handling x[151] = 124
+      $$$ M-PROC(240869): x[151] = 124 is found between y[171] = 121 and y[172] = 125
+      $$$ M-PROC(240869): about to write x[151] = 124 into position 323 of the output array
+      $$$ M-PROC(240870): handling x[152] = 127
+      $$$ M-PROC(240871): handling x[153] = 128
+      $$$ M-PROC(240870): x[152] = 127 is found between y[173] = 126 and y[174] = 130
+      $$$ M-PROC(240870): about to write x[152] = 127 into position 326 of the output array
+      $$$ M-PROC(240872): handling x[154] = 129
+      $$$ M-PROC(240871): x[153] = 128 is found between y[173] = 126 and y[174] = 130
+      $$$ M-PROC(240873): handling x[155] = 132
+      $$$ M-PROC(240871): about to write x[153] = 128 into position 327 of the output array
+      $$$ M-PROC(240872): x[154] = 129 is found between y[173] = 126 and y[174] = 130
+      $$$ M-PROC(240872): about to write x[154] = 129 into position 328 of the output array
+      $$$ M-PROC(240874): handling x[156] = 133
+      $$$ M-PROC(240873): x[155] = 132 is found between y[175] = 131 and y[176] = 135
+      $$$ M-PROC(240875): handling x[157] = 134
+      $$$ M-PROC(240874): x[156] = 133 is found between y[175] = 131 and y[176] = 135
+      $$$ M-PROC(240876): handling x[158] = 138
+      $$$ M-PROC(240876): x[158] = 138 is found between y[178] = 137 and y[179] = 139
+      $$$ M-PROC(240877): handling x[159] = 141
+      $$$ M-PROC(240876): about to write x[158] = 138 into position 337 of the output array
+      $$$ M-PROC(240878): handling x[160] = 143
+      $$$ M-PROC(240877): x[159] = 141 is found between y[180] = 140 and y[181] = 142
+      $$$ M-PROC(240879): handling x[161] = 147
+      $$$ M-PROC(240877): about to write x[159] = 141 into position 340 of the output array
+      $$$ M-PROC(240878): x[160] = 143 is found between y[181] = 142 and y[182] = 144
+      $$$ M-PROC(240878): about to write x[160] = 143 into position 342 of the output array
+      $$$ M-PROC(240879): x[161] = 147 is found between y[184] = 146 and y[185] = 148
+      $$$ M-PROC(240880): handling x[162] = 149
+      $$$ M-PROC(240879): about to write x[161] = 147 into position 346 of the output array
+      $$$ M-PROC(240880): x[162] = 149 is found between y[185] = 148 and y[186] = 151
+      $$$ M-PROC(240880): about to write x[162] = 149 into position 348 of the output array
+      $$$ M-PROC(240738): about to write x[24] = -152 into position 47 of the output array
+      $$$ M-PROC(240882): handling x[164] = 152
+      $$$ M-PROC(240883): handling x[165] = 159
+      $$$ M-PROC(240884): handling x[166] = 163
+      $$$ M-PROC(240885): handling x[167] = 170
+      $$$ M-PROC(240884): x[166] = 163 is found between y[195] = 162 and y[196] = 164
+      $$$ M-PROC(240884): about to write x[166] = 163 into position 362 of the output array
+      $$$ M-PROC(240885): x[167] = 170 is found between y[201] = 169 and y[202] = 173
+      $$$ M-PROC(240886): handling x[168] = 171
+      $$$ M-PROC(240885): about to write x[167] = 170 into position 369 of the output array
+      $$$ M-PROC(240886): x[168] = 171 is found between y[201] = 169 and y[202] = 173
+      $$$ M-PROC(240886): about to write x[168] = 171 into position 370 of the output array
+      $$$ M-PROC(240887): handling x[169] = 172
+      $$$ M-PROC(240888): handling x[170] = 178
+      $$$ M-PROC(240887): x[169] = 172 is found between y[201] = 169 and y[202] = 173
+      $$$ M-PROC(240889): handling x[171] = 179
+      $$$ M-PROC(240887): about to write x[169] = 172 into position 371 of the output array
+      $$$ M-PROC(240888): x[170] = 178 is found between y[206] = 177 and y[207] = 180
+      $$$ M-PROC(240890): handling x[172] = 181
+      $$$ M-PROC(240891): handling x[173] = 183
+      $$$ M-PROC(240892): handling x[174] = 186
+      $$$ M-PROC(240892): x[174] = 186 is found between y[210] = 185 and y[211] = 187
+      $$$ M-PROC(240892): about to write x[174] = 186 into position 385 of the output array
+      $$$ M-PROC(240893): handling x[175] = 188
+      $$$ M-PROC(240894): handling x[176] = 190
+      $$$ M-PROC(240893): x[175] = 188 is found between y[211] = 187 and y[212] = 189
+      $$$ M-PROC(240895): handling x[177] = 192
+      $$$ M-PROC(240894): x[176] = 190 is found between y[212] = 189 and y[213] = 191
+      $$$ M-PROC(240893): about to write x[175] = 188 into position 387 of the output array
+      $$$ M-PROC(240894): about to write x[176] = 190 into position 389 of the output array
+      $$$ M-PROC(240896): handling x[178] = 193
+      $$$ M-PROC(240895): x[177] = 192 is found between y[213] = 191 and y[214] = 194
+      $$$ M-PROC(240895): about to write x[177] = 192 into position 391 of the output array
+      $$$ M-PROC(240896): x[178] = 193 is found between y[213] = 191 and y[214] = 194
+      $$$ M-PROC(240896): about to write x[178] = 193 into position 392 of the output array
+      $$$ M-PROC(240897): handling x[179] = 199
+      $$$ M-PROC(240881): x[163] = 150 is found between y[185] = 148 and y[186] = 151
+      $$$ M-PROC(240897): x[179] = 199 is found between y[218] = 198 and y[219] = 200
+      $$$ M-PROC(240897): about to write x[179] = 199 into position 398 of the output array
+      $$$ M-PROC(240898): handling y[0] = -199
+      $$$ M-PROC(240899): handling y[1] = -198
+      $$$ M-PROC(240901): handling y[3] = -196
+      $$$ M-PROC(240899): y[1] = -198 is found to be smaller than x[0] = -194
+      $$$ M-PROC(240899): about to write y[1] = -198 into position 1 of the output array
+      $$$ M-PROC(240900): handling y[2] = -197
+      $$$ M-PROC(240901): y[3] = -196 is found to be smaller than x[0] = -187
+      $$$ M-PROC(240901): about to write y[3] = -196 into position 3 of the output array
+      $$$ M-PROC(240902): handling y[4] = -193
+      $$$ M-PROC(240900): y[2] = -197 is found to be smaller than x[0] = -189
+      $$$ M-PROC(240900): about to write y[2] = -197 into position 2 of the output array
+      $$$ M-PROC(240903): handling y[5] = -192
+      $$$ M-PROC(240902): y[4] = -193 is found between x[1] = -194 and x[2] = -189
+      $$$ M-PROC(240902): about to write y[4] = -193 into position 6 of the output array
+      $$$ M-PROC(240904): handling y[6] = -191
+      $$$ M-PROC(240903): y[5] = -192 is found between x[1] = -194 and x[2] = -189
+      $$$ M-PROC(240905): handling y[7] = -190
+      $$$ M-PROC(240903): about to write y[5] = -192 into position 7 of the output array
+      $$$ M-PROC(240904): y[6] = -191 is found between x[1] = -194 and x[2] = -189
+      $$$ M-PROC(240904): about to write y[6] = -191 into position 8 of the output array
+      $$$ M-PROC(240720): about to write x[6] = -183 into position 16 of the output array
+      $$$ M-PROC(240907): handling y[9] = -185
+      $$$ M-PROC(240908): handling y[10] = -181
+      $$$ M-PROC(240907): y[9] = -185 is found between x[4] = -186 and x[5] = -184
+      $$$ M-PROC(240909): handling y[11] = -178
+      $$$ M-PROC(240907): about to write y[9] = -185 into position 14 of the output array
+      $$$ M-PROC(240909): y[11] = -178 is found between x[9] = -179 and x[10] = -177
+      $$$ M-PROC(240909): about to write y[11] = -178 into position 21 of the output array
+      $$$ M-PROC(240910): handling y[12] = -176
+      $$$ M-PROC(240911): handling y[13] = -175
+      $$$ M-PROC(240910): y[12] = -176 is found between x[10] = -177 and x[11] = -172
+      $$$ M-PROC(240912): handling y[14] = -174
+      $$$ M-PROC(240910): about to write y[12] = -176 into position 23 of the output array
+      $$$ M-PROC(240911): y[13] = -175 is found between x[10] = -177 and x[11] = -172
+      $$$ M-PROC(240911): about to write y[13] = -175 into position 24 of the output array
+      $$$ M-PROC(240913): handling y[15] = -173
+      $$$ M-PROC(240913): y[15] = -173 is found between x[10] = -177 and x[11] = -172
+      $$$ M-PROC(240913): about to write y[15] = -173 into position 26 of the output array
+      $$$ M-PROC(240914): handling y[16] = -169
+      $$$ M-PROC(240914): y[16] = -169 is found between x[13] = -170 and x[14] = -167
+      $$$ M-PROC(240914): about to write y[16] = -169 into position 30 of the output array
+      $$$ M-PROC(240920): handling y[22] = -153
+      $$$ M-PROC(240918): handling y[20] = -156
+      $$$ M-PROC(240919): handling y[21] = -155
+      $$$ M-PROC(240921): handling y[23] = -149
+      $$$ M-PROC(240919): y[21] = -155 is found between x[22] = -158 and x[23] = -154
+      $$$ M-PROC(240919): about to write y[21] = -155 into position 44 of the output array
+      $$$ M-PROC(240922): handling y[24] = -147
+      $$$ M-PROC(240921): y[23] = -149 is found between x[26] = -150 and x[27] = -148
+      $$$ M-PROC(240921): about to write y[23] = -149 into position 50 of the output array
+      $$$ M-PROC(240923): handling y[25] = -146
+      $$$ M-PROC(240922): y[24] = -147 is found between x[27] = -148 and x[28] = -144
+      $$$ M-PROC(240922): about to write y[24] = -147 into position 52 of the output array
+      $$$ M-PROC(240924): handling y[26] = -145
+      $$$ M-PROC(240923): y[25] = -146 is found between x[27] = -148 and x[28] = -144
+      $$$ M-PROC(240923): about to write y[25] = -146 into position 53 of the output array
+      $$$ M-PROC(240925): handling y[27] = -143
+      $$$ M-PROC(240924): y[26] = -145 is found between x[27] = -148 and x[28] = -144
+      $$$ M-PROC(240924): about to write y[26] = -145 into position 54 of the output array
+      $$$ M-PROC(240926): handling y[28] = -142
+      $$$ M-PROC(240928): handling y[30] = -140
+      $$$ M-PROC(240928): y[30] = -140 is found between x[28] = -144 and x[29] = -138
+      $$$ M-PROC(240744): x[28] = -144 is found between y[26] = -145 and y[27] = -143
+      $$$ M-PROC(240929): handling y[31] = -139
+      $$$ M-PROC(240744): about to write x[28] = -144 into position 55 of the output array
+      $$$ M-PROC(240931): handling y[33] = -135
+      $$$ M-PROC(240929): y[31] = -139 is found between x[28] = -144 and x[29] = -138
+      $$$ M-PROC(240929): about to write y[31] = -139 into position 60 of the output array
+      $$$ M-PROC(240932): handling y[34] = -133
+      $$$ M-PROC(240931): y[33] = -135 is found between x[30] = -136 and x[31] = -134
+      $$$ M-PROC(240931): about to write y[33] = -135 into position 64 of the output array
+      $$$ M-PROC(240930): handling y[32] = -137
+      $$$ M-PROC(240932): y[34] = -133 is found between x[31] = -134 and x[32] = -131
+      $$$ M-PROC(240932): about to write y[34] = -133 into position 66 of the output array
+      $$$ M-PROC(240933): handling y[35] = -132
+      $$$ M-PROC(240930): y[32] = -137 is found between x[29] = -138 and x[30] = -136
+      $$$ M-PROC(240930): about to write y[32] = -137 into position 62 of the output array
+      $$$ M-PROC(240934): handling y[36] = -129
+      $$$ M-PROC(240933): y[35] = -132 is found between x[31] = -134 and x[32] = -131
+      $$$ M-PROC(240933): about to write y[35] = -132 into position 67 of the output array
+      $$$ M-PROC(240935): handling y[37] = -128
+      $$$ M-PROC(240927): y[29] = -141 is found between x[28] = -144 and x[29] = -138
+      $$$ M-PROC(240927): about to write y[29] = -141 into position 58 of the output array
+      $$$ M-PROC(240936): handling y[38] = -126
+      $$$ M-PROC(240937): handling y[39] = -122
+      $$$ M-PROC(240936): y[38] = -126 is found between x[34] = -127 and x[35] = -125
+      $$$ M-PROC(240936): about to write y[38] = -126 into position 73 of the output array
+      $$$ M-PROC(240938): handling y[40] = -121
+      $$$ M-PROC(240937): y[39] = -122 is found between x[37] = -123 and x[38] = -120
+      $$$ M-PROC(240937): about to write y[39] = -122 into position 77 of the output array
+      $$$ M-PROC(240939): handling y[41] = -119
+      $$$ M-PROC(240938): y[40] = -121 is found between x[37] = -123 and x[38] = -120
+      $$$ M-PROC(240938): about to write y[40] = -121 into position 78 of the output array
+      $$$ M-PROC(240940): handling y[42] = -118
+      $$$ M-PROC(240939): y[41] = -119 is found between x[38] = -120 and x[39] = -117
+      $$$ M-PROC(240939): about to write y[41] = -119 into position 80 of the output array
+      $$$ M-PROC(240941): handling y[43] = -114
+      $$$ M-PROC(240940): y[42] = -118 is found between x[38] = -120 and x[39] = -117
+      $$$ M-PROC(240942): handling y[44] = -113
+      $$$ M-PROC(240940): about to write y[42] = -118 into position 81 of the output array
+      $$$ M-PROC(240943): handling y[45] = -112
+      $$$ M-PROC(240944): handling y[46] = -110
+      $$$ M-PROC(240943): y[45] = -112 is found between x[41] = -115 and x[42] = -111
+      $$$ M-PROC(240943): about to write y[45] = -112 into position 87 of the output array
+      $$$ M-PROC(240945): handling y[47] = -109
+      $$$ M-PROC(240944): y[46] = -110 is found between x[42] = -111 and x[43] = -103
+      $$$ M-PROC(240946): handling y[48] = -108
+      $$$ M-PROC(240944): about to write y[46] = -110 into position 89 of the output array
+      $$$ M-PROC(240945): y[47] = -109 is found between x[42] = -111 and x[43] = -103
+      $$$ M-PROC(240945): about to write y[47] = -109 into position 90 of the output array
+      $$$ M-PROC(240946): y[48] = -108 is found between x[42] = -111 and x[43] = -103
+      $$$ M-PROC(240949): about to write y[51] = -105 into position 94 of the output array
+      $$$ M-PROC(240946): about to write y[48] = -108 into position 91 of the output array
+      $$$ M-PROC(240749): about to write x[33] = -130 into position 69 of the output array
+      $$$ M-PROC(240750): x[34] = -127 is found between y[37] = -128 and y[38] = -126
+      $$$ M-PROC(240950): handling y[52] = -104
+      $$$ M-PROC(240950): y[52] = -104 is found between x[42] = -111 and x[43] = -103
+      $$$ M-PROC(240952): handling y[54] = -101
+      $$$ M-PROC(240950): about to write y[52] = -104 into position 95 of the output array
+      $$$ M-PROC(240953): handling y[55] = -100
+      $$$ M-PROC(240952): y[54] = -101 is found between x[43] = -103 and x[44] = -97
+      $$$ M-PROC(240951): handling y[53] = -102
+      $$$ M-PROC(240953): y[55] = -100 is found between x[43] = -103 and x[44] = -97
+      $$$ M-PROC(240952): about to write y[54] = -101 into position 98 of the output array
+      $$$ M-PROC(240953): about to write y[55] = -100 into position 99 of the output array
+      $$$ M-PROC(240954): handling y[56] = -99
+      $$$ M-PROC(240951): y[53] = -102 is found between x[43] = -103 and x[44] = -97
+      $$$ M-PROC(240951): about to write y[53] = -102 into position 97 of the output array
+      $$$ M-PROC(240954): y[56] = -99 is found between x[43] = -103 and x[44] = -97
+      $$$ M-PROC(240954): about to write y[56] = -99 into position 100 of the output array
+      $$$ M-PROC(240955): handling y[57] = -98
+      $$$ M-PROC(240956): handling y[58] = -95
+      $$$ M-PROC(240955): y[57] = -98 is found between x[43] = -103 and x[44] = -97
+      $$$ M-PROC(240955): about to write y[57] = -98 into position 101 of the output array
+      $$$ M-PROC(240956): y[58] = -95 is found between x[45] = -96 and x[46] = -89
+      $$$ M-PROC(240957): handling y[59] = -94
+      $$$ M-PROC(240957): y[59] = -94 is found between x[45] = -96 and x[46] = -89
+      $$$ M-PROC(240957): about to write y[59] = -94 into position 105 of the output array
+      $$$ M-PROC(240958): handling y[60] = -93
+      $$$ M-PROC(240751): x[35] = -125 is found between y[38] = -126 and y[39] = -122
+      $$$ M-PROC(240958): y[60] = -93 is found between x[45] = -96 and x[46] = -89
+      $$$ M-PROC(240958): about to write y[60] = -93 into position 106 of the output array
+      $$$ M-PROC(240959): handling y[61] = -92
+      $$$ M-PROC(240751): about to write x[35] = -125 into position 74 of the output array
+      $$$ M-PROC(240960): handling y[62] = -91
+      $$$ M-PROC(240959): y[61] = -92 is found between x[45] = -96 and x[46] = -89
+      $$$ M-PROC(240959): about to write y[61] = -92 into position 107 of the output array
+      $$$ M-PROC(240962): handling y[64] = -87
+      $$$ M-PROC(240960): y[62] = -91 is found between x[45] = -96 and x[46] = -89
+      $$$ M-PROC(240960): about to write y[62] = -91 into position 108 of the output array
+      $$$ M-PROC(240961): handling y[63] = -90
+      $$$ M-PROC(240961): y[63] = -90 is found between x[45] = -96 and x[46] = -89
+      $$$ M-PROC(240963): handling y[65] = -85
+      $$$ M-PROC(240964): handling y[66] = -83
+      $$$ M-PROC(240963): y[65] = -85 is found between x[48] = -86 and x[49] = -84
+      $$$ M-PROC(240965): handling y[67] = -82
+      $$$ M-PROC(240963): about to write y[65] = -85 into position 114 of the output array
+      $$$ M-PROC(240964): y[66] = -83 is found between x[49] = -84 and x[50] = -81
+      $$$ M-PROC(240964): about to write y[66] = -83 into position 116 of the output array
+      $$$ M-PROC(240965): y[67] = -82 is found between x[49] = -84 and x[50] = -81
+      $$$ M-PROC(240965): about to write y[67] = -82 into position 117 of the output array
+      $$$ M-PROC(240966): handling y[68] = -79
+      $$$ M-PROC(240967): handling y[69] = -78
+      $$$ M-PROC(240966): y[68] = -79 is found between x[51] = -80 and x[52] = -76
+      $$$ M-PROC(240966): about to write y[68] = -79 into position 120 of the output array
+      $$$ M-PROC(240968): about to write y[70] = -77 into position 122 of the output array
+      $$$ M-PROC(240967): y[69] = -78 is found between x[51] = -80 and x[52] = -76
+      $$$ M-PROC(240967): about to write y[69] = -78 into position 121 of the output array
+      $$$ M-PROC(240969): handling y[71] = -75
+      $$$ M-PROC(240970): handling y[72] = -73
+      $$$ M-PROC(240969): y[71] = -75 is found between x[52] = -76 and x[53] = -74
+      $$$ M-PROC(240969): about to write y[71] = -75 into position 124 of the output array
+      $$$ M-PROC(240971): handling y[73] = -71
+      $$$ M-PROC(240971): y[73] = -71 is found between x[54] = -72 and x[55] = -69
+      $$$ M-PROC(240972): handling y[74] = -70
+      $$$ M-PROC(240971): about to write y[73] = -71 into position 128 of the output array
+      $$$ M-PROC(240973): handling y[75] = -65
+      $$$ M-PROC(240972): y[74] = -70 is found between x[54] = -72 and x[55] = -69
+      $$$ M-PROC(240972): about to write y[74] = -70 into position 129 of the output array
+      $$$ M-PROC(240973): y[75] = -65 is found between x[58] = -66 and x[59] = -63
+      $$$ M-PROC(240974): handling y[76] = -64
+      $$$ M-PROC(240973): about to write y[75] = -65 into position 134 of the output array
+      $$$ M-PROC(240975): handling y[77] = -61
+      $$$ M-PROC(240974): y[76] = -64 is found between x[58] = -66 and x[59] = -63
+      $$$ M-PROC(240974): about to write y[76] = -64 into position 135 of the output array
+      $$$ M-PROC(240976): handling y[78] = -57
+      $$$ M-PROC(240975): y[77] = -61 is found between x[60] = -62 and x[61] = -60
+      $$$ M-PROC(240975): about to write y[77] = -61 into position 138 of the output array
+      $$$ M-PROC(240976): y[78] = -57 is found between x[63] = -58 and x[64] = -55
+      $$$ M-PROC(240976): about to write y[78] = -57 into position 142 of the output array
+      $$$ M-PROC(240977): handling y[79] = -56
+      $$$ M-PROC(240978): handling y[80] = -54
+      $$$ M-PROC(240979): handling y[81] = -51
+      $$$ M-PROC(240982): handling y[84] = -47
+      $$$ M-PROC(240982): y[84] = -47 is found between x[67] = -48 and x[68] = -46
+      $$$ M-PROC(240982): about to write y[84] = -47 into position 152 of the output array
+      $$$ M-PROC(240983): handling y[85] = -45
+      $$$ M-PROC(240985): handling y[87] = -42
+      $$$ M-PROC(240983): y[85] = -45 is found between x[68] = -46 and x[69] = -43
+      $$$ M-PROC(240984): handling y[86] = -44
+      $$$ M-PROC(240983): about to write y[85] = -45 into position 154 of the output array
+      $$$ M-PROC(240985): y[87] = -42 is found between x[69] = -43 and x[70] = -41
+      $$$ M-PROC(240985): about to write y[87] = -42 into position 157 of the output array
+      $$$ M-PROC(240984): y[86] = -44 is found between x[68] = -46 and x[69] = -43
+      $$$ M-PROC(240986): handling y[88] = -37
+      $$$ M-PROC(240984): about to write y[86] = -44 into position 155 of the output array
+      $$$ M-PROC(240987): handling y[89] = -35
+      $$$ M-PROC(240988): handling y[90] = -32
+      $$$ M-PROC(240987): y[89] = -35 is found between x[74] = -36 and x[75] = -34
+      $$$ M-PROC(240989): handling y[91] = -31
+      $$$ M-PROC(240990): handling y[92] = -29
+      $$$ M-PROC(240990): y[92] = -29 is found between x[77] = -30 and x[78] = -28
+      $$$ M-PROC(240990): about to write y[92] = -29 into position 170 of the output array
+      $$$ M-PROC(240991): handling y[93] = -27
+      $$$ M-PROC(240991): y[93] = -27 is found between x[78] = -28 and x[79] = -26
+      $$$ M-PROC(240991): about to write y[93] = -27 into position 172 of the output array
+      $$$ M-PROC(240753): about to write x[37] = -123 into position 76 of the output array
+      $$$ M-PROC(240993): handling y[95] = -23
+      $$$ M-PROC(240994): handling y[96] = -18
+      $$$ M-PROC(240994): y[96] = -18 is found between x[84] = -19 and x[85] = -14
+      $$$ M-PROC(240994): about to write y[96] = -18 into position 181 of the output array
+      $$$ M-PROC(240995): handling y[97] = -17
+      $$$ M-PROC(240996): handling y[98] = -16
+      $$$ M-PROC(240995): y[97] = -17 is found between x[84] = -19 and x[85] = -14
+      $$$ M-PROC(240995): about to write y[97] = -17 into position 182 of the output array
+      $$$ M-PROC(240996): y[98] = -16 is found between x[84] = -19 and x[85] = -14
+      $$$ M-PROC(240996): about to write y[98] = -16 into position 183 of the output array
+      $$$ M-PROC(240997): handling y[99] = -15
+      $$$ M-PROC(240998): handling y[100] = -12
+      $$$ M-PROC(240998): y[100] = -12 is found between x[86] = -13 and x[87] = -11
+      $$$ M-PROC(240998): about to write y[100] = -12 into position 187 of the output array
+      $$$ M-PROC(240999): handling y[101] = -9
+      $$$ M-PROC(241000): handling y[102] = -7
+      $$$ M-PROC(240999): y[101] = -9 is found between x[88] = -10 and x[89] = -8
+      $$$ M-PROC(240999): about to write y[101] = -9 into position 190 of the output array
+      $$$ M-PROC(241000): y[102] = -7 is found between x[89] = -8 and x[90] = -5
+      $$$ M-PROC(240992): y[94] = -24 is found between x[80] = -25 and x[81] = -22
+      $$$ M-PROC(241000): about to write y[102] = -7 into position 192 of the output array
+      $$$ M-PROC(241001): handling y[103] = -6
+      $$$ M-PROC(241002): handling y[104] = -4
+      $$$ M-PROC(241002): y[104] = -4 is found between x[90] = -5 and x[91] = -3
+      $$$ M-PROC(241003): handling y[105] = -2
+      $$$ M-PROC(241002): about to write y[104] = -4 into position 195 of the output array
+      $$$ M-PROC(241004): handling y[106] = -1
+      $$$ M-PROC(241003): y[105] = -2 is found between x[91] = -3 and x[92] = 0
+      $$$ M-PROC(241005): handling y[107] = 1
+      $$$ M-PROC(241004): y[106] = -1 is found between x[91] = -3 and x[92] = 0
+      $$$ M-PROC(241003): about to write y[105] = -2 into position 197 of the output array
+      $$$ M-PROC(241006): handling y[108] = 2
+      $$$ M-PROC(241004): about to write y[106] = -1 into position 198 of the output array
+      $$$ M-PROC(241005): y[107] = 1 is found between x[92] = 0 and x[93] = 4
+      $$$ M-PROC(241007): handling y[109] = 3
+      $$$ M-PROC(241005): about to write y[107] = 1 into position 200 of the output array
+      $$$ M-PROC(241006): y[108] = 2 is found between x[92] = 0 and x[93] = 4
+      $$$ M-PROC(241006): about to write y[108] = 2 into position 201 of the output array
+      $$$ M-PROC(241008): handling y[110] = 10
+      $$$ M-PROC(241007): y[109] = 3 is found between x[92] = 0 and x[93] = 4
+      $$$ M-PROC(241007): about to write y[109] = 3 into position 202 of the output array
+      $$$ M-PROC(241009): handling y[111] = 11
+      $$$ M-PROC(241010): handling y[112] = 13
+      $$$ M-PROC(241011): handling y[113] = 15
+      $$$ M-PROC(241010): y[112] = 13 is found between x[99] = 12 and x[100] = 14
+      $$$ M-PROC(241010): about to write y[112] = 13 into position 212 of the output array
+      $$$ M-PROC(241012): handling y[114] = 17
+      $$$ M-PROC(241011): y[113] = 15 is found between x[100] = 14 and x[101] = 16
+      $$$ M-PROC(241015): handling y[117] = 21
+      $$$ M-PROC(241011): about to write y[113] = 15 into position 214 of the output array
+      $$$ M-PROC(241012): y[114] = 17 is found between x[101] = 16 and x[102] = 19
+   ### Q-PROC(240740): pivot element is a[158] = 133
+      $$$ M-PROC(241012): about to write y[114] = 17 into position 216 of the output array
+      $$$ M-PROC(241015): y[117] = 21 is found between x[102] = 19 and x[103] = 23
+      $$$ M-PROC(241016): handling y[118] = 22
+      $$$ M-PROC(241015): about to write y[117] = 21 into position 220 of the output array
+      $$$ M-PROC(241018): handling y[120] = 27
+      $$$ M-PROC(241016): y[118] = 22 is found between x[102] = 19 and x[103] = 23
+      $$$ M-PROC(241019): handling y[121] = 28
+      $$$ M-PROC(241018): y[120] = 27 is found between x[105] = 25 and x[106] = 30
+      $$$ M-PROC(241016): about to write y[118] = 22 into position 221 of the output array
+      $$$ M-PROC(241018): about to write y[120] = 27 into position 226 of the output array
+      $$$ M-PROC(241019): y[121] = 28 is found between x[105] = 25 and x[106] = 30
+      $$$ M-PROC(241017): handling y[119] = 26
+      $$$ M-PROC(241020): handling y[122] = 29
+      $$$ M-PROC(241021): handling y[123] = 31
+      $$$ M-PROC(241020): y[122] = 29 is found between x[105] = 25 and x[106] = 30
+      $$$ M-PROC(241022): handling y[124] = 34
+      $$$ M-PROC(241023): handling y[125] = 35
+      $$$ M-PROC(241023): y[125] = 35 is found between x[108] = 33 and x[109] = 37
+      $$$ M-PROC(241023): about to write y[125] = 35 into position 234 of the output array
+      $$$ M-PROC(241024): handling y[126] = 36
+      $$$ M-PROC(241025): handling y[127] = 39
+      $$$ M-PROC(241024): y[126] = 36 is found between x[108] = 33 and x[109] = 37
+      $$$ M-PROC(241025): y[127] = 39 is found between x[110] = 38 and x[111] = 42
+      $$$ M-PROC(241026): handling y[128] = 40
+      $$$ M-PROC(241024): about to write y[126] = 36 into position 235 of the output array
+      $$$ M-PROC(241025): about to write y[127] = 39 into position 238 of the output array
+      $$$ M-PROC(241027): handling y[129] = 41
+      $$$ M-PROC(241026): y[128] = 40 is found between x[110] = 38 and x[111] = 42
+      $$$ M-PROC(241026): about to write y[128] = 40 into position 239 of the output array
+      $$$ M-PROC(241028): handling y[130] = 43
+      $$$ M-PROC(241027): y[129] = 41 is found between x[110] = 38 and x[111] = 42
+      $$$ M-PROC(241029): handling y[131] = 44
+      $$$ M-PROC(241030): handling y[132] = 48
+      $$$ M-PROC(241031): handling y[133] = 51
+      $$$ M-PROC(241032): handling y[134] = 52
+      $$$ M-PROC(241031): y[133] = 51 is found between x[116] = 50 and x[117] = 53
+      $$$ M-PROC(241031): about to write y[133] = 51 into position 250 of the output array
+      $$$ M-PROC(241033): handling y[135] = 54
+      $$$ M-PROC(241032): y[134] = 52 is found between x[116] = 50 and x[117] = 53
+      $$$ M-PROC(241032): about to write y[134] = 52 into position 251 of the output array
+      $$$ M-PROC(241034): handling y[136] = 55
+      $$$ M-PROC(241033): y[135] = 54 is found between x[117] = 53 and x[118] = 56
+      $$$ M-PROC(241033): about to write y[135] = 54 into position 253 of the output array
+      $$$ M-PROC(241035): handling y[137] = 59
+      $$$ M-PROC(241034): y[136] = 55 is found between x[117] = 53 and x[118] = 56
+      $$$ M-PROC(241034): about to write y[136] = 55 into position 254 of the output array
+      $$$ M-PROC(241036): handling y[138] = 61
+      $$$ M-PROC(241035): y[137] = 59 is found between x[120] = 58 and x[121] = 60
+      $$$ M-PROC(241035): about to write y[137] = 59 into position 258 of the output array
+      $$$ M-PROC(241036): y[138] = 61 is found between x[121] = 60 and x[122] = 62
+      $$$ M-PROC(241036): about to write y[138] = 61 into position 260 of the output array
+      $$$ M-PROC(241037): handling y[139] = 63
+      $$$ M-PROC(241038): handling y[140] = 64
+      $$$ M-PROC(241037): y[139] = 63 is found between x[122] = 62 and x[123] = 68
+      $$$ M-PROC(241037): about to write y[139] = 63 into position 262 of the output array
+      $$$ M-PROC(241038): y[140] = 64 is found between x[122] = 62 and x[123] = 68
+      $$$ M-PROC(241038): about to write y[140] = 64 into position 263 of the output array
+      $$$ M-PROC(241039): handling y[141] = 65
+      $$$ M-PROC(241040): handling y[142] = 66
+      $$$ M-PROC(241040): y[142] = 66 is found between x[122] = 62 and x[123] = 68
+      $$$ M-PROC(241040): about to write y[142] = 66 into position 265 of the output array
+      $$$ M-PROC(240757): x[41] = -115 is found between y[42] = -118 and y[43] = -114
+      $$$ M-PROC(241041): handling y[143] = 67
+      $$$ M-PROC(240757): about to write x[41] = -115 into position 84 of the output array
+      $$$ M-PROC(241042): handling y[144] = 71
+      $$$ M-PROC(241041): y[143] = 67 is found between x[122] = 62 and x[123] = 68
+      $$$ M-PROC(241041): about to write y[143] = 67 into position 266 of the output array
+      $$$ M-PROC(241043): handling y[145] = 72
+      $$$ M-PROC(241042): y[144] = 71 is found between x[125] = 70 and x[126] = 74
+      $$$ M-PROC(241042): about to write y[144] = 71 into position 270 of the output array
+      $$$ M-PROC(241043): y[145] = 72 is found between x[125] = 70 and x[126] = 74
+      $$$ M-PROC(241044): handling y[146] = 73
+      $$$ M-PROC(241043): about to write y[145] = 72 into position 271 of the output array
+      $$$ M-PROC(241045): handling y[147] = 78
+      $$$ M-PROC(241046): handling y[148] = 79
+      $$$ M-PROC(241046): y[148] = 79 is found between x[129] = 77 and x[130] = 81
+      $$$ M-PROC(241046): about to write y[148] = 79 into position 278 of the output array
+      $$$ M-PROC(241047): handling y[149] = 80
+      $$$ M-PROC(241048): handling y[150] = 82
+      $$$ M-PROC(241047): y[149] = 80 is found between x[129] = 77 and x[130] = 81
+      $$$ M-PROC(241049): handling y[151] = 84
+      $$$ M-PROC(241048): y[150] = 82 is found between x[130] = 81 and x[131] = 83
+      $$$ M-PROC(241047): about to write y[149] = 80 into position 279 of the output array
+      $$$ M-PROC(241048): about to write y[150] = 82 into position 281 of the output array
+      $$$ M-PROC(241049): y[151] = 84 is found between x[131] = 83 and x[132] = 87
+      $$$ M-PROC(241052): handling y[154] = 88
+      $$$ M-PROC(241049): about to write y[151] = 84 into position 283 of the output array
+      $$$ M-PROC(240760): about to write x[44] = -97 into position 102 of the output array
+      $$$ M-PROC(240761): x[45] = -96 is found between y[57] = -98 and y[58] = -95
+      $$$ M-PROC(240761): about to write x[45] = -96 into position 103 of the output array
+      $$$ M-PROC(241053): handling y[155] = 89
+      $$$ M-PROC(241053): y[155] = 89 is found between x[132] = 87 and x[133] = 91
+      $$$ M-PROC(241053): about to write y[155] = 89 into position 288 of the output array
+      $$$ M-PROC(241057): handling y[157] = 92
+      $$$ M-PROC(241058): handling y[158] = 94
+      $$$ M-PROC(241057): y[157] = 92 is found between x[133] = 91 and x[134] = 93
+      $$$ M-PROC(241057): about to write y[157] = 92 into position 291 of the output array
+      $$$ M-PROC(241055): handling y[156] = 90
+      $$$ M-PROC(241058): y[158] = 94 is found between x[134] = 93 and x[135] = 95
+      $$$ M-PROC(241058): about to write y[158] = 94 into position 293 of the output array
+      $$$ M-PROC(241059): handling y[159] = 97
+      $$$ M-PROC(241060): handling y[160] = 100
+      $$$ M-PROC(241061): handling y[161] = 103
+      $$$ M-PROC(241062): handling y[162] = 106
+      $$$ M-PROC(241061): y[161] = 103 is found between x[140] = 102 and x[141] = 104
+      $$$ M-PROC(241061): about to write y[161] = 103 into position 302 of the output array
+      $$$ M-PROC(241063): handling y[163] = 107
+      $$$ M-PROC(241062): y[162] = 106 is found between x[142] = 105 and x[143] = 112
+      $$$ M-PROC(241064): handling y[164] = 108
+      $$$ M-PROC(241062): about to write y[162] = 106 into position 305 of the output array
+      $$$ M-PROC(241063): y[163] = 107 is found between x[142] = 105 and x[143] = 112
+      $$$ M-PROC(241063): about to write y[163] = 107 into position 306 of the output array
+      $$$ M-PROC(241064): y[164] = 108 is found between x[142] = 105 and x[143] = 112
+      $$$ M-PROC(241066): handling y[166] = 110
+      $$$ M-PROC(241064): about to write y[164] = 108 into position 307 of the output array
+      $$$ M-PROC(241067): handling y[167] = 111
+      $$$ M-PROC(241066): y[166] = 110 is found between x[142] = 105 and x[143] = 112
+      $$$ M-PROC(241066): about to write y[166] = 110 into position 309 of the output array
+      $$$ M-PROC(241068): handling y[168] = 116
+      $$$ M-PROC(241067): y[167] = 111 is found between x[142] = 105 and x[143] = 112
+      $$$ M-PROC(241067): about to write y[167] = 111 into position 310 of the output array
+      $$$ M-PROC(241065): handling y[165] = 109
+      $$$ M-PROC(241065): y[165] = 109 is found between x[142] = 105 and x[143] = 112
+      $$$ M-PROC(241069): handling y[169] = 117
+      $$$ M-PROC(241065): about to write y[165] = 109 into position 308 of the output array
+      $$$ M-PROC(241070): handling y[170] = 119
+      $$$ M-PROC(241069): y[169] = 117 is found between x[146] = 115 and x[147] = 118
+      $$$ M-PROC(241071): handling y[171] = 121
+      $$$ M-PROC(241069): about to write y[169] = 117 into position 316 of the output array
+      $$$ M-PROC(241070): y[170] = 119 is found between x[147] = 118 and x[148] = 120
+      $$$ M-PROC(241070): about to write y[170] = 119 into position 318 of the output array
+      $$$ M-PROC(241072): handling y[172] = 125
+      $$$ M-PROC(241071): y[171] = 121 is found between x[148] = 120 and x[149] = 122
+      $$$ M-PROC(241071): about to write y[171] = 121 into position 320 of the output array
+      $$$ M-PROC(241073): handling y[173] = 126
+      $$$ M-PROC(241072): y[172] = 125 is found between x[151] = 124 and x[152] = 127
+      $$$ M-PROC(241073): y[173] = 126 is found between x[151] = 124 and x[152] = 127
+      $$$ M-PROC(241074): handling y[174] = 130
+      $$$ M-PROC(241072): about to write y[172] = 125 into position 324 of the output array
+      $$$ M-PROC(241073): about to write y[173] = 126 into position 325 of the output array
+      $$$ M-PROC(241075): handling y[175] = 131
+      $$$ M-PROC(241074): y[174] = 130 is found between x[154] = 129 and x[155] = 132
+      $$$ M-PROC(241074): about to write y[174] = 130 into position 329 of the output array
+      $$$ M-PROC(241076): handling y[176] = 135
+      $$$ M-PROC(241078): handling y[178] = 137
+      $$$ M-PROC(241076): y[176] = 135 is found between x[157] = 134 and x[158] = 138
+      $$$ M-PROC(241076): about to write y[176] = 135 into position 334 of the output array
+      $$$ M-PROC(241079): handling y[179] = 139
+      $$$ M-PROC(241080): handling y[180] = 140
+      $$$ M-PROC(241081): handling y[181] = 142
+      $$$ M-PROC(241080): y[180] = 140 is found between x[158] = 138 and x[159] = 141
+      $$$ M-PROC(241080): about to write y[180] = 140 into position 339 of the output array
+      $$$ M-PROC(241082): handling y[182] = 144
+      $$$ M-PROC(241081): y[181] = 142 is found between x[159] = 141 and x[160] = 143
+      $$$ M-PROC(241081): about to write y[181] = 142 into position 341 of the output array
+      $$$ M-PROC(241083): handling y[183] = 145
+      $$$ M-PROC(241082): y[182] = 144 is found between x[160] = 143 and x[161] = 147
+      $$$ M-PROC(241082): about to write y[182] = 144 into position 343 of the output array
+      $$$ M-PROC(241083): y[183] = 145 is found between x[160] = 143 and x[161] = 147
+      $$$ M-PROC(241083): about to write y[183] = 145 into position 344 of the output array
+   ### Q-PROC(241054): entering with a[160..171]
+       64  72  61  63  69  67  70  71  66  65  62  68  
+   ### Q-PROC(241054): pivot element is a[171] = 167
+      $$$ M-PROC(241084): handling y[184] = 146
+      $$$ M-PROC(241084): y[184] = 146 is found between x[160] = 143 and x[161] = 147
+      $$$ M-PROC(241084): about to write y[184] = 146 into position 345 of the output array
+      $$$ M-PROC(241085): handling y[185] = 148
+   ### Q-PROC(241056): entering with a[173..199]
+       83  99  91  93  78  82  85  98  81  75  95  94  79  76  96  87  86  89  80  77  97  90  74  88  92  100  84  
+      $$$ M-PROC(241085): y[185] = 148 is found between x[161] = 147 and x[162] = 149
+      $$$ M-PROC(241085): about to write y[185] = 148 into position 347 of the output array
+   ### Q-PROC(241056): pivot element is a[199] = 183
+      $$$ M-PROC(241086): handling y[186] = 151
+      $$$ M-PROC(241087): handling y[187] = 153
+      $$$ M-PROC(241086): y[186] = 151 is found between x[163] = 150 and x[164] = 152
+      $$$ M-PROC(241086): about to write y[186] = 151 into position 350 of the output array
+      $$$ M-PROC(241077): y[177] = 136 is found between x[157] = 134 and x[158] = 138
+      $$$ M-PROC(241087): y[187] = 153 is found between x[164] = 152 and x[165] = 159
+      $$$ M-PROC(241087): about to write y[187] = 153 into position 352 of the output array
+      $$$ M-PROC(241088): handling y[188] = 154
+      $$$ M-PROC(241077): about to write y[177] = 136 into position 335 of the output array
+      $$$ M-PROC(241089): handling y[189] = 155
+      $$$ M-PROC(241091): handling y[191] = 157
+      $$$ M-PROC(241092): handling y[192] = 158
+      $$$ M-PROC(241091): y[191] = 157 is found between x[164] = 152 and x[165] = 159
+      $$$ M-PROC(241090): handling y[190] = 156
+      $$$ M-PROC(241091): about to write y[191] = 157 into position 356 of the output array
+      $$$ M-PROC(241092): y[192] = 158 is found between x[164] = 152 and x[165] = 159
+      $$$ M-PROC(241092): about to write y[192] = 158 into position 357 of the output array
+      $$$ M-PROC(241090): y[190] = 156 is found between x[164] = 152 and x[165] = 159
+      $$$ M-PROC(241090): about to write y[190] = 156 into position 355 of the output array
+      $$$ M-PROC(241093): handling y[193] = 160
+      $$$ M-PROC(241094): handling y[194] = 161
+      $$$ M-PROC(241093): y[193] = 160 is found between x[165] = 159 and x[166] = 163
+      $$$ M-PROC(241095): handling y[195] = 162
+      $$$ M-PROC(241093): about to write y[193] = 160 into position 359 of the output array
+      $$$ M-PROC(241094): y[194] = 161 is found between x[165] = 159 and x[166] = 163
+      $$$ M-PROC(241096): handling y[196] = 164
+      $$$ M-PROC(241094): about to write y[194] = 161 into position 360 of the output array
+      $$$ M-PROC(241095): y[195] = 162 is found between x[165] = 159 and x[166] = 163
+      $$$ M-PROC(241095): about to write y[195] = 162 into position 361 of the output array
+      $$$ M-PROC(241096): y[196] = 164 is found between x[166] = 163 and x[167] = 170
+      $$$ M-PROC(241096): about to write y[196] = 164 into position 363 of the output array
+      $$$ M-PROC(241097): handling y[197] = 165
+      $$$ M-PROC(241097): y[197] = 165 is found between x[166] = 163 and x[167] = 170
+      $$$ M-PROC(241097): about to write y[197] = 165 into position 364 of the output array
+      $$$ M-PROC(241098): handling y[198] = 166
+      $$$ M-PROC(241099): handling y[199] = 167
+      $$$ M-PROC(240767): x[51] = -80 is found between y[67] = -82 and y[68] = -79
+      $$$ M-PROC(241103): handling y[203] = 174
+      $$$ M-PROC(241103): y[203] = 174 is found between x[169] = 172 and x[170] = 178
+      $$$ M-PROC(241103): about to write y[203] = 174 into position 373 of the output array
+      $$$ M-PROC(241102): handling y[202] = 173
+      $$$ M-PROC(241102): y[202] = 173 is found between x[169] = 172 and x[170] = 178
+      $$$ M-PROC(241102): about to write y[202] = 173 into position 372 of the output array
+      $$$ M-PROC(241105): handling y[205] = 176
+      $$$ M-PROC(241105): y[205] = 176 is found between x[169] = 172 and x[170] = 178
+      $$$ M-PROC(241105): about to write y[205] = 176 into position 375 of the output array
+      $$$ M-PROC(241104): handling y[204] = 175
+      $$$ M-PROC(241104): y[204] = 175 is found between x[169] = 172 and x[170] = 178
+      $$$ M-PROC(241104): about to write y[204] = 175 into position 374 of the output array
+      $$$ M-PROC(241106): handling y[206] = 177
+      $$$ M-PROC(241107): handling y[207] = 180
+      $$$ M-PROC(241107): y[207] = 180 is found between x[171] = 179 and x[172] = 181
+      $$$ M-PROC(241108): handling y[208] = 182
+      $$$ M-PROC(241107): about to write y[207] = 180 into position 379 of the output array
+      $$$ M-PROC(241109): handling y[209] = 184
+      $$$ M-PROC(241108): y[208] = 182 is found between x[172] = 181 and x[173] = 183
+      $$$ M-PROC(241108): about to write y[208] = 182 into position 381 of the output array
+      $$$ M-PROC(241110): handling y[210] = 185
+      $$$ M-PROC(241109): y[209] = 184 is found between x[173] = 183 and x[174] = 186
+      $$$ M-PROC(241109): about to write y[209] = 184 into position 383 of the output array
+      $$$ M-PROC(240768): x[52] = -76 is found between y[70] = -77 and y[71] = -75
+      $$$ M-PROC(241110): y[210] = 185 is found between x[173] = 183 and x[174] = 186
+      $$$ M-PROC(241110): about to write y[210] = 185 into position 384 of the output array
+      $$$ M-PROC(241111): handling y[211] = 187
+      $$$ M-PROC(240768): about to write x[52] = -76 into position 123 of the output array
+      $$$ M-PROC(241112): handling y[212] = 189
+      $$$ M-PROC(241113): handling y[213] = 191
+      $$$ M-PROC(241114): handling y[214] = 194
+      $$$ M-PROC(241115): handling y[215] = 195
+      $$$ M-PROC(241114): y[214] = 194 is found between x[178] = 193 and x[179] = 199
+      $$$ M-PROC(241116): handling y[216] = 196
+      $$$ M-PROC(241114): about to write y[214] = 194 into position 393 of the output array
+      $$$ M-PROC(241115): y[215] = 195 is found between x[178] = 193 and x[179] = 199
+      $$$ M-PROC(241115): about to write y[215] = 195 into position 394 of the output array
+      $$$ M-PROC(241116): y[216] = 196 is found between x[178] = 193 and x[179] = 199
+      $$$ M-PROC(241116): about to write y[216] = 196 into position 395 of the output array
+      $$$ M-PROC(241117): handling y[217] = 197
+      $$$ M-PROC(241118): handling y[218] = 198
+      $$$ M-PROC(241117): y[217] = 197 is found between x[178] = 193 and x[179] = 199
+      $$$ M-PROC(241117): about to write y[217] = 197 into position 396 of the output array
+      $$$ M-PROC(241118): y[218] = 198 is found between x[178] = 193 and x[179] = 199
+      $$$ M-PROC(241118): about to write y[218] = 198 into position 397 of the output array
+      $$$ M-PROC(241119): handling y[219] = 200
+      $$$ M-PROC(241119): y[219] = 200 is found to be larger than x[179] = 199
+      $$$ M-PROC(241119): about to write y[219] = 200 into position 399 of the output array
+      $$$ M-PROC(240769): x[53] = -74 is found between y[71] = -75 and y[72] = -73
+      $$$ M-PROC(240775): x[59] = -63 is found between y[76] = -64 and y[77] = -61
+      $$$ M-PROC(240769): about to write x[53] = -74 into position 125 of the output array
+      $$$ M-PROC(240776): x[60] = -62 is found between y[76] = -64 and y[77] = -61
+      $$$ M-PROC(240775): about to write x[59] = -63 into position 136 of the output array
+      $$$ M-PROC(240776): about to write x[60] = -62 into position 137 of the output array
+      $$$ M-PROC(240784): x[68] = -46 is found between y[84] = -47 and y[85] = -45
+      $$$ M-PROC(240785): x[69] = -43 is found between y[86] = -44 and y[87] = -42
+      $$$ M-PROC(240784): about to write x[68] = -46 into position 153 of the output array
+      $$$ M-PROC(240786): x[70] = -41 is found between y[87] = -42 and y[88] = -37
+      $$$ M-PROC(240786): about to write x[70] = -41 into position 158 of the output array
+      $$$ M-PROC(240794): x[78] = -28 is found between y[92] = -29 and y[93] = -27
+      $$$ M-PROC(240795): x[79] = -26 is found between y[93] = -27 and y[94] = -24
+      $$$ M-PROC(240796): x[80] = -25 is found between y[93] = -27 and y[94] = -24
+      $$$ M-PROC(240795): about to write x[79] = -26 into position 173 of the output array
+      $$$ M-PROC(240796): about to write x[80] = -25 into position 174 of the output array
+      $$$ M-PROC(240804): about to write x[88] = -10 into position 189 of the output array
+      $$$ M-PROC(240805): x[89] = -8 is found between y[101] = -9 and y[102] = -7
+      $$$ M-PROC(240806): x[90] = -5 is found between y[103] = -6 and y[104] = -4
+      $$$ M-PROC(240805): about to write x[89] = -8 into position 191 of the output array
+      $$$ M-PROC(240812): x[96] = 7 is found between y[109] = 3 and y[110] = 10
+      $$$ M-PROC(240806): about to write x[90] = -5 into position 194 of the output array
+      $$$ M-PROC(240812): about to write x[96] = 7 into position 206 of the output array
+      $$$ M-PROC(240811): about to write x[95] = 6 into position 205 of the output array
+      $$$ M-PROC(240813): x[97] = 8 is found between y[109] = 3 and y[110] = 10
+      $$$ M-PROC(240818): x[102] = 19 is found between y[115] = 18 and y[116] = 20
+      $$$ M-PROC(240819): x[103] = 23 is found between y[118] = 22 and y[119] = 26
+      $$$ M-PROC(240818): about to write x[102] = 19 into position 218 of the output array
+      $$$ M-PROC(240819): about to write x[103] = 23 into position 222 of the output array
+      $$$ M-PROC(240820): x[104] = 24 is found between y[118] = 22 and y[119] = 26
+      $$$ M-PROC(240820): about to write x[104] = 24 into position 223 of the output array
+      $$$ M-PROC(240826): x[110] = 38 is found between y[126] = 36 and y[127] = 39
+      $$$ M-PROC(240826): about to write x[110] = 38 into position 237 of the output array
+      $$$ M-PROC(240827): x[111] = 42 is found between y[129] = 41 and y[130] = 43
+      $$$ M-PROC(240834): about to write x[118] = 56 into position 255 of the output array
+      $$$ M-PROC(240835): x[119] = 57 is found between y[136] = 55 and y[137] = 59
+      $$$ M-PROC(240835): about to write x[119] = 57 into position 256 of the output array
+      $$$ M-PROC(240836): x[120] = 58 is found between y[136] = 55 and y[137] = 59
+      $$$ M-PROC(240836): about to write x[120] = 58 into position 257 of the output array
+      $$$ M-PROC(240837): x[121] = 60 is found between y[137] = 59 and y[138] = 61
+      $$$ M-PROC(240837): about to write x[121] = 60 into position 259 of the output array
+      $$$ M-PROC(240845): x[128] = 76 is found between y[146] = 73 and y[147] = 78
+      $$$ M-PROC(240847): x[129] = 77 is found between y[146] = 73 and y[147] = 78
+      $$$ M-PROC(240847): about to write x[129] = 77 into position 276 of the output array
+      $$$ M-PROC(240854): x[136] = 96 is found between y[158] = 94 and y[159] = 97
+      $$$ M-PROC(240853): about to write x[135] = 95 into position 294 of the output array
+      $$$ M-PROC(240854): about to write x[136] = 96 into position 295 of the output array
+      $$$ M-PROC(240855): x[137] = 98 is found between y[159] = 97 and y[160] = 100
+      $$$ M-PROC(240855): about to write x[137] = 98 into position 297 of the output array
+      $$$ M-PROC(240856): x[138] = 99 is found between y[159] = 97 and y[160] = 100
+      $$$ M-PROC(240857): x[139] = 101 is found between y[160] = 100 and y[161] = 103
+      $$$ M-PROC(240857): about to write x[139] = 101 into position 300 of the output array
+   ### Q-PROC(240844): pivot element is a[9] = 1
+      $$$ M-PROC(240873): about to write x[155] = 132 into position 331 of the output array
+      $$$ M-PROC(240875): x[157] = 134 is found between y[175] = 131 and y[176] = 135
+   ### Q-PROC(241120): entering with a[11..79]
+       -65  -74  -62  -57  -55  -70  -79  -81  -46  -59  -35  -54  -42  -60  -87  -64  -76  -86  -23  -28  -67  -43  -66  -49  -38  -85  -51  -80  -44  -73  -34  -24  -88  -37  -63  -39  -52  -33  -69  -82  -83  -58  -45  -40  -84  -22  -75  -47  -41  -29  -78  -26  -71  -61  -53  -30  -25  -50  -56  -36  -68  -72  -32  -21  -27  -31  -77  -48  -20  
+      $$$ M-PROC(240875): about to write x[157] = 134 into position 333 of the output array
+   ### Q-PROC(241120): pivot element is a[79] = 79
+   ### Q-PROC(241121): entering with a[81..120]
+       16  -11  0  -2  6  1  7  -18  -17  -6  -9  19  21  3  5  -4  -12  11  4  18  2  17  9  15  -10  -15  -3  13  20  -13  -5  -8  -16  -7  10  8  -1  12  14  -14  
+   ### Q-PROC(241121): pivot element is a[120] = 85
+      $$$ M-PROC(240874): about to write x[156] = 133 into position 332 of the output array
+      $$$ M-PROC(240882): x[164] = 152 is found between y[186] = 151 and y[187] = 153
+      $$$ M-PROC(240883): x[165] = 159 is found between y[192] = 158 and y[193] = 160
+      $$$ M-PROC(240882): about to write x[164] = 152 into position 351 of the output array
+      $$$ M-PROC(240889): x[171] = 179 is found between y[206] = 177 and y[207] = 180
+      $$$ M-PROC(240883): about to write x[165] = 159 into position 358 of the output array
+      $$$ M-PROC(240889): about to write x[171] = 179 into position 378 of the output array
+      $$$ M-PROC(240888): about to write x[170] = 178 into position 377 of the output array
+      $$$ M-PROC(240890): x[172] = 181 is found between y[207] = 180 and y[208] = 182
+      $$$ M-PROC(240891): x[173] = 183 is found between y[208] = 182 and y[209] = 184
+      $$$ M-PROC(240890): about to write x[172] = 181 into position 380 of the output array
+      $$$ M-PROC(240881): about to write x[163] = 150 into position 349 of the output array
+      $$$ M-PROC(240891): about to write x[173] = 183 into position 382 of the output array
+      $$$ M-PROC(240898): y[0] = -199 is found to be smaller than x[0] = -195
+      $$$ M-PROC(240898): about to write y[0] = -199 into position 0 of the output array
+      $$$ M-PROC(240905): y[7] = -190 is found between x[1] = -194 and x[2] = -189
+      $$$ M-PROC(240908): y[10] = -181 is found between x[7] = -182 and x[8] = -180
+      $$$ M-PROC(240905): about to write y[7] = -190 into position 9 of the output array
+      $$$ M-PROC(240912): y[14] = -174 is found between x[10] = -177 and x[11] = -172
+      $$$ M-PROC(240908): about to write y[10] = -181 into position 18 of the output array
+      $$$ M-PROC(240912): about to write y[14] = -174 into position 25 of the output array
+      $$$ M-PROC(240920): y[22] = -153 is found between x[23] = -154 and x[24] = -152
+      $$$ M-PROC(240918): y[20] = -156 is found between x[22] = -158 and x[23] = -154
+      $$$ M-PROC(240920): about to write y[22] = -153 into position 46 of the output array
+      $$$ M-PROC(240925): y[27] = -143 is found between x[28] = -144 and x[29] = -138
+      $$$ M-PROC(240918): about to write y[20] = -156 into position 43 of the output array
+      $$$ M-PROC(240926): y[28] = -142 is found between x[28] = -144 and x[29] = -138
+      $$$ M-PROC(240928): about to write y[30] = -140 into position 59 of the output array
+      $$$ M-PROC(240934): y[36] = -129 is found between x[33] = -130 and x[34] = -127
+      $$$ M-PROC(240934): about to write y[36] = -129 into position 70 of the output array
+      $$$ M-PROC(240935): y[37] = -128 is found between x[33] = -130 and x[34] = -127
+      $$$ M-PROC(240935): about to write y[37] = -128 into position 71 of the output array
+      $$$ M-PROC(240941): y[43] = -114 is found between x[41] = -115 and x[42] = -111
+      $$$ M-PROC(240942): y[44] = -113 is found between x[41] = -115 and x[42] = -111
+      $$$ M-PROC(240941): about to write y[43] = -114 into position 85 of the output array
+      $$$ M-PROC(240750): about to write x[34] = -127 into position 72 of the output array
+      $$$ M-PROC(240942): about to write y[44] = -113 into position 86 of the output array
+      $$$ M-PROC(240956): about to write y[58] = -95 into position 104 of the output array
+      $$$ M-PROC(240962): y[64] = -87 is found between x[47] = -88 and x[48] = -86
+      $$$ M-PROC(240961): about to write y[63] = -90 into position 109 of the output array
+      $$$ M-PROC(240962): about to write y[64] = -87 into position 112 of the output array
+      $$$ M-PROC(240970): y[72] = -73 is found between x[53] = -74 and x[54] = -72
+      $$$ M-PROC(240977): y[79] = -56 is found between x[63] = -58 and x[64] = -55
+      $$$ M-PROC(240970): about to write y[72] = -73 into position 126 of the output array
+      $$$ M-PROC(240978): y[80] = -54 is found between x[64] = -55 and x[65] = -53
+      $$$ M-PROC(240979): y[81] = -51 is found between x[66] = -52 and x[67] = -48
+      $$$ M-PROC(240979): about to write y[81] = -51 into position 148 of the output array
+      $$$ M-PROC(240986): y[88] = -37 is found between x[73] = -38 and x[74] = -36
+      $$$ M-PROC(240988): y[90] = -32 is found between x[76] = -33 and x[77] = -30
+      $$$ M-PROC(240986): about to write y[88] = -37 into position 162 of the output array
+      $$$ M-PROC(240987): about to write y[89] = -35 into position 164 of the output array
+      $$$ M-PROC(240988): about to write y[90] = -32 into position 167 of the output array
+      $$$ M-PROC(240989): y[91] = -31 is found between x[76] = -33 and x[77] = -30
+      $$$ M-PROC(240993): y[95] = -23 is found between x[80] = -25 and x[81] = -22
+      $$$ M-PROC(240989): about to write y[91] = -31 into position 168 of the output array
+      $$$ M-PROC(240993): about to write y[95] = -23 into position 176 of the output array
+      $$$ M-PROC(240997): y[99] = -15 is found between x[84] = -19 and x[85] = -14
+      $$$ M-PROC(240992): about to write y[94] = -24 into position 175 of the output array
+      $$$ M-PROC(241001): y[103] = -6 is found between x[89] = -8 and x[90] = -5
+      $$$ M-PROC(241008): y[110] = 10 is found between x[98] = 9 and x[99] = 12
+      $$$ M-PROC(241009): y[111] = 11 is found between x[98] = 9 and x[99] = 12
+      $$$ M-PROC(241008): about to write y[110] = 10 into position 209 of the output array
+      $$$ M-PROC(241009): about to write y[111] = 11 into position 210 of the output array
+      $$$ M-PROC(241019): about to write y[121] = 28 into position 227 of the output array
+      $$$ M-PROC(241017): y[119] = 26 is found between x[105] = 25 and x[106] = 30
+      $$$ M-PROC(241017): about to write y[119] = 26 into position 225 of the output array
+      $$$ M-PROC(241020): about to write y[122] = 29 into position 228 of the output array
+      $$$ M-PROC(241021): y[123] = 31 is found between x[106] = 30 and x[107] = 32
+   ### Q-PROC(241123): entering with a[134..158]
+       41  46  51  57  40  53  45  48  42  58  56  36  50  52  55  47  44  37  43  35  59  49  38  39  54  
+   ### Q-PROC(241123): pivot element is a[158] = 153
+   ### Q-PROC(241122): entering with a[122..132]
+       24  27  23  26  28  29  30  33  25  32  31  
+   ### Q-PROC(241122): pivot element is a[132] = 130
+      $$$ M-PROC(241022): y[124] = 34 is found between x[108] = 33 and x[109] = 37
+      $$$ M-PROC(241022): about to write y[124] = 34 into position 233 of the output array
+      $$$ M-PROC(241027): about to write y[129] = 41 into position 240 of the output array
+      $$$ M-PROC(241028): y[130] = 43 is found between x[111] = 42 and x[112] = 45
+      $$$ M-PROC(241029): y[131] = 44 is found between x[111] = 42 and x[112] = 45
+      $$$ M-PROC(241028): about to write y[130] = 43 into position 242 of the output array
+      $$$ M-PROC(241029): about to write y[131] = 44 into position 243 of the output array
+      $$$ M-PROC(241030): y[132] = 48 is found between x[114] = 47 and x[115] = 49
+      $$$ M-PROC(241039): y[141] = 65 is found between x[122] = 62 and x[123] = 68
+      $$$ M-PROC(241044): y[146] = 73 is found between x[125] = 70 and x[126] = 74
+      $$$ M-PROC(241044): about to write y[146] = 73 into position 272 of the output array
+      $$$ M-PROC(241045): y[147] = 78 is found between x[129] = 77 and x[130] = 81
+      $$$ M-PROC(241052): y[154] = 88 is found between x[132] = 87 and x[133] = 91
+      $$$ M-PROC(241045): about to write y[147] = 78 into position 277 of the output array
+      $$$ M-PROC(241055): y[156] = 90 is found between x[132] = 87 and x[133] = 91
+      $$$ M-PROC(241052): about to write y[154] = 88 into position 287 of the output array
+      $$$ M-PROC(241055): about to write y[156] = 90 into position 289 of the output array
+      $$$ M-PROC(241059): y[159] = 97 is found between x[136] = 96 and x[137] = 98
+      $$$ M-PROC(241060): y[160] = 100 is found between x[138] = 99 and x[139] = 101
+      $$$ M-PROC(241059): about to write y[159] = 97 into position 296 of the output array
+      $$$ M-PROC(241068): y[168] = 116 is found between x[146] = 115 and x[147] = 118
+      $$$ M-PROC(241060): about to write y[160] = 100 into position 299 of the output array
+      $$$ M-PROC(241075): y[175] = 131 is found between x[154] = 129 and x[155] = 132
+      $$$ M-PROC(241078): y[178] = 137 is found between x[157] = 134 and x[158] = 138
+      $$$ M-PROC(241078): about to write y[178] = 137 into position 336 of the output array
+      $$$ M-PROC(241079): y[179] = 139 is found between x[158] = 138 and x[159] = 141
+      $$$ M-PROC(241079): about to write y[179] = 139 into position 338 of the output array
+      $$$ M-PROC(241088): y[188] = 154 is found between x[164] = 152 and x[165] = 159
+      $$$ M-PROC(241088): about to write y[188] = 154 into position 353 of the output array
+      $$$ M-PROC(241089): y[189] = 155 is found between x[164] = 152 and x[165] = 159
+   ### Q-PROC(241126): entering with a[168..171]
+       69  72  70  71  
+   ### Q-PROC(241126): pivot element is a[171] = 170
+   ### Q-PROC(241124): entering with a[160..166]
+       64  61  63  67  66  65  62  
+   ### Q-PROC(241124): pivot element is a[166] = 161
+   ### Q-PROC(241125): entering with a[173..182]
+       83  78  82  81  75  79  76  80  77  74  
+   ### Q-PROC(241127): entering with a[184..199]
+       94  91  85  96  87  86  89  98  93  97  90  99  88  92  100  95  
+   ### Q-PROC(241125): pivot element is a[182] = 173
+   ### Q-PROC(241127): pivot element is a[199] = 194
+      $$$ M-PROC(241098): y[198] = 166 is found between x[166] = 163 and x[167] = 170
+      $$$ M-PROC(241099): y[199] = 167 is found between x[166] = 163 and x[167] = 170
+      $$$ M-PROC(241098): about to write y[198] = 166 into position 365 of the output array
+      $$$ M-PROC(240767): about to write x[51] = -80 into position 119 of the output array
+      $$$ M-PROC(241099): about to write y[199] = 167 into position 366 of the output array
+      $$$ M-PROC(241106): y[206] = 177 is found between x[169] = 172 and x[170] = 178
+      $$$ M-PROC(241106): about to write y[206] = 177 into position 376 of the output array
+      $$$ M-PROC(241111): y[211] = 187 is found between x[174] = 186 and x[175] = 188
+      $$$ M-PROC(241112): y[212] = 189 is found between x[175] = 188 and x[176] = 190
+      $$$ M-PROC(241111): about to write y[211] = 187 into position 386 of the output array
+      $$$ M-PROC(241113): y[213] = 191 is found between x[176] = 190 and x[177] = 192
+      $$$ M-PROC(241112): about to write y[212] = 189 into position 388 of the output array
+      $$$ M-PROC(241113): about to write y[213] = 191 into position 390 of the output array
+      $$$ M-PROC(240785): about to write x[69] = -43 into position 156 of the output array
+      $$$ M-PROC(240794): about to write x[78] = -28 into position 171 of the output array
+      $$$ M-PROC(240813): about to write x[97] = 8 into position 207 of the output array
+   ### Q-PROC(241141): entering with a[171..171]
+       72  
+      $$$ M-PROC(240827): about to write x[111] = 42 into position 241 of the output array
+      $$$ M-PROC(240845): about to write x[128] = 76 into position 275 of the output array
+      $$$ M-PROC(240856): about to write x[138] = 99 into position 298 of the output array
+   ### Q-PROC(241128): entering with a[0..0]
+       -99  
+   ### Q-PROC(241129): entering with a[2..9]
+       -91  -95  -93  -94  -92  -96  -97  -90  
+   ### Q-PROC(241128): section a[0..0] sorted
+       -99  
+   ### Q-PROC(241129): pivot element is a[9] = 9
+   ### Q-PROC(241128): exits
+   ### Q-PROC(241131): exits
+   ### Q-PROC(241130): entering with a[11..78]
+       -65  -74  -62  -57  -55  -70  -79  -81  -46  -59  -35  -54  -42  -60  -87  -64  -76  -86  -23  -28  -67  -43  -66  -49  -38  -85  -51  -80  -44  -73  -34  -24  -88  -37  -63  -39  -52  -33  -69  -82  -83  -58  -45  -40  -84  -22  -75  -47  -41  -29  -78  -26  -71  -61  -53  -30  -25  -50  -56  -36  -68  -72  -32  -21  -27  -31  -77  -48  
+   ### Q-PROC(241130): pivot element is a[78] = 51
+   ### Q-PROC(241133): entering with a[86..120]
+       1  7  16  -11  -6  -9  19  21  3  5  -4  -12  11  4  18  2  17  9  15  -10  0  -3  13  20  -13  -5  -8  -2  -7  10  8  -1  12  14  6  
+   ### Q-PROC(241133): pivot element is a[120] = 105
+   ### Q-PROC(241132): entering with a[81..84]
+       -18  -17  -15  -16  
+   ### Q-PROC(241132): pivot element is a[84] = 83
+      $$$ M-PROC(240925): about to write y[27] = -143 into position 56 of the output array
+      $$$ M-PROC(240926): about to write y[28] = -142 into position 57 of the output array
+      $$$ M-PROC(240977): about to write y[79] = -56 into position 143 of the output array
+      $$$ M-PROC(240978): about to write y[80] = -54 into position 145 of the output array
+      $$$ M-PROC(240997): about to write y[99] = -15 into position 184 of the output array
+      $$$ M-PROC(241001): about to write y[103] = -6 into position 193 of the output array
+      $$$ M-PROC(241021): about to write y[123] = 31 into position 230 of the output array
+      $$$ M-PROC(241030): about to write y[132] = 48 into position 247 of the output array
+      $$$ M-PROC(241039): about to write y[141] = 65 into position 264 of the output array
+   ### Q-PROC(241135): entering with a[134..152]
+       41  46  51  40  53  45  48  42  36  50  52  47  44  37  43  35  49  38  39  
+   ### Q-PROC(241135): pivot element is a[152] = 138
+   ### Q-PROC(241136): entering with a[122..129]
+       24  27  23  26  28  29  30  25  
+   ### Q-PROC(241136): pivot element is a[129] = 124
+   ### Q-PROC(241137): entering with a[154..158]
+       59  58  56  55  57  
+   ### Q-PROC(241138): entering with a[131..132]
+       32  33  
+   ### Q-PROC(241137): pivot element is a[158] = 156
+   ### Q-PROC(241138): pivot element is a[132] = 132
+      $$$ M-PROC(241068): about to write y[168] = 116 into position 315 of the output array
+      $$$ M-PROC(241075): about to write y[175] = 131 into position 330 of the output array
+      $$$ M-PROC(241089): about to write y[189] = 155 into position 354 of the output array
+   ### Q-PROC(241139): entering with a[168..169]
+       69  70  
+   ### Q-PROC(241139): pivot element is a[169] = 169
+   ### Q-PROC(241140): entering with a[160..160]
+       61  
+   ### Q-PROC(241142): exits
+   ### Q-PROC(241140): section a[160..160] sorted
+       61  
+   ### Q-PROC(241145): entering with a[174..182]
+       78  82  81  75  79  76  80  77  83  
+   ### Q-PROC(241140): exits
+   ### Q-PROC(241145): pivot element is a[182] = 182
+   ### Q-PROC(241143): entering with a[184..193]
+       94  91  85  87  86  89  93  90  88  92  
+   ### Q-PROC(241143): pivot element is a[193] = 191
+   ### Q-PROC(241144): entering with a[162..166]
+       63  67  66  65  64  
+   ### Q-PROC(241144): pivot element is a[166] = 163
+   ### Q-PROC(241146): entering with a[195..199]
+       99  96  97  100  98  
+   ### Q-PROC(241158): entering with a[125..129]
+       26  28  29  30  27  
+   ### Q-PROC(241158): pivot element is a[129] = 126
+   ### Q-PROC(241141): section a[171..171] sorted
+       72  
+   ### Q-PROC(241147): entering with a[2..8]
+       -91  -95  -93  -94  -92  -96  -97  
+   ### Q-PROC(241147): pivot element is a[8] = 2
+   ### Q-PROC(241141): exits
+   ### Q-PROC(241148): exits
+   ### Q-PROC(241149): entering with a[11..50]
+       -65  -74  -62  -57  -55  -70  -79  -81  -59  -54  -60  -87  -64  -76  -86  -67  -66  -49  -85  -51  -80  -73  -88  -63  -52  -69  -82  -83  -58  -84  -75  -78  -71  -61  -53  -50  -56  -68  -72  -77  
+   ### Q-PROC(241150): entering with a[86..104]
+       1  -11  -6  -9  3  5  -4  -12  4  2  -10  0  -3  -13  -5  -8  -2  -7  -1  
+   ### Q-PROC(241149): pivot element is a[50] = 22
+   ### Q-PROC(241150): pivot element is a[104] = 98
+   ### Q-PROC(241151): entering with a[81..82]
+       -18  -17  
+   ### Q-PROC(241153): entering with a[84..84]
+       -15  
+   ### Q-PROC(241154): entering with a[106..120]
+       21  11  13  20  16  18  7  17  9  10  8  15  12  14  19  
+   ### Q-PROC(241152): entering with a[52..78]
+       -44  -45  -40  -43  -22  -34  -47  -41  -29  -24  -26  -35  -37  -46  -30  -25  -39  -38  -36  -33  -23  -32  -21  -27  -31  -28  -42  
+   ### Q-PROC(241152): pivot element is a[78] = 57
+   ### Q-PROC(241155): entering with a[134..137]
+       36  37  35  38  
+   ### Q-PROC(241155): pivot element is a[137] = 137
+   ### Q-PROC(241156): entering with a[122..123]
+       24  23  
+   ### Q-PROC(241175): entering with a[86..97]
+       -11  -6  -9  -4  -12  -10  -3  -13  -5  -8  -2  -7  
+   ### Q-PROC(241175): pivot element is a[97] = 92
+   ### Q-PROC(241156): pivot element is a[123] = 122
+   ### Q-PROC(241157): entering with a[139..152]
+       45  48  42  41  50  52  47  44  46  43  51  49  40  53  
+   ### Q-PROC(241157): pivot element is a[152] = 152
+   ### Q-PROC(241146): pivot element is a[199] = 197
+   ### Q-PROC(241159): entering with a[131..131]
+       32  
+   ### Q-PROC(241160): entering with a[154..155]
+       56  55  
+   ### Q-PROC(241159): section a[131..131] sorted
+       32  
+   ### Q-PROC(241172): exits
+   ### Q-PROC(241161): entering with a[168..168]
+       69  
+   ### Q-PROC(241160): pivot element is a[155] = 154
+   ### Q-PROC(241159): exits
+   ### Q-PROC(241162): exits
+   ### Q-PROC(241161): section a[168..168] sorted
+       69  
+   ### Q-PROC(241151): pivot element is a[82] = 82
+   ### Q-PROC(241161): exits
+   ### Q-PROC(241164): exits
+   ### Q-PROC(241177): entering with a[99..104]
+       3  4  2  5  0  1  
+   ### Q-PROC(241176): entering with a[11..21]
+       -79  -81  -87  -86  -85  -80  -88  -82  -83  -84  -78  
+   ### Q-PROC(241177): pivot element is a[104] = 100
+   ### Q-PROC(241176): pivot element is a[21] = 21
+   ### Q-PROC(241163): entering with a[157..158]
+       58  59  
+   ### Q-PROC(241163): pivot element is a[158] = 158
+   ### Q-PROC(241165): entering with a[174..181]
+       78  82  81  75  79  76  80  77  
+   ### Q-PROC(241165): pivot element is a[181] = 176
+   ### Q-PROC(241170): entering with a[164..166]
+       66  65  67  
+   ### Q-PROC(241139): section a[168..169] sorted
+       69  70  
+   ### Q-PROC(241170): pivot element is a[166] = 166
+   ### Q-PROC(241187): entering with a[123..123]
+       24  
+   ### Q-PROC(241169): entering with a[192..193]
+       93  94  
+   ### Q-PROC(241187): section a[123..123] sorted
+       24  
+   ### Q-PROC(241139): exits
+   ### Q-PROC(241169): pivot element is a[193] = 193
+   ### Q-PROC(241138): section a[131..132] sorted
+       32  33  
+   ### Q-PROC(241187): exits
+   ### Q-PROC(241153): section a[84..84] sorted
+       -15  
+   ### Q-PROC(241138): exits
+   ### Q-PROC(241168): exits
+   ### Q-PROC(241186): exits
+   ### Q-PROC(241153): exits
+   ### Q-PROC(241167): entering with a[162..162]
+       63  
+   ### Q-PROC(241166): entering with a[184..190]
+       91  85  87  86  89  90  88  
+   ### Q-PROC(241167): section a[162..162] sorted
+       63  
+   ### Q-PROC(241166): pivot element is a[190] = 187
+   ### Q-PROC(241154): pivot element is a[120] = 118
+   ### Q-PROC(241171): entering with a[125..125]
+       26  
+   ### Q-PROC(241173): entering with a[127..129]
+       29  30  28  
+   ### Q-PROC(241173): pivot element is a[129] = 127
+   ### Q-PROC(241174): entering with a[3..8]
+       -95  -93  -94  -92  -96  -91  
+   ### Q-PROC(241178): entering with a[23..50]
+       -64  -76  -57  -67  -66  -49  -55  -51  -70  -73  -65  -63  -52  -69  -74  -59  -58  -54  -75  -60  -71  -61  -53  -50  -56  -68  -72  -62  
+   ### Q-PROC(241174): pivot element is a[8] = 8
+   ### Q-PROC(241178): pivot element is a[50] = 37
+   ### Q-PROC(241180): entering with a[86..91]
+       -11  -9  -12  -10  -13  -8  
+   ### Q-PROC(241180): pivot element is a[91] = 91
+   ### Q-PROC(241181): entering with a[134..136]
+       36  37  35  
+   ### Q-PROC(241181): pivot element is a[136] = 134
+   ### Q-PROC(241179): entering with a[52..56]
+       -44  -45  -43  -47  -46  
+   ### Q-PROC(241179): pivot element is a[56] = 53
+   ### Q-PROC(241204): entering with a[177..181]
+       78  79  82  80  81  
+   ### Q-PROC(241182): exits
+   ### Q-PROC(241204): pivot element is a[181] = 180
+   ### Q-PROC(241207): entering with a[184..186]
+       85  87  86  
+   ### Q-PROC(241184): entering with a[93..97]
+       -6  -5  -4  -2  -3  
+   ### Q-PROC(241206): exits
+   ### Q-PROC(241207): pivot element is a[186] = 185
+   ### Q-PROC(241184): pivot element is a[97] = 96
+   ### Q-PROC(241208): entering with a[188..190]
+       89  90  91  
+   ### Q-PROC(241185): entering with a[139..151]
+       45  48  42  41  50  52  47  44  46  43  51  49  40  
+   ### Q-PROC(241208): pivot element is a[190] = 190
+   ### Q-PROC(241167): exits
+   ### Q-PROC(241185): pivot element is a[151] = 139
+   ### Q-PROC(241201): entering with a[174..175]
+       75  76  
+   ### Q-PROC(241201): pivot element is a[175] = 175
+   ### Q-PROC(241189): exits
+   ### Q-PROC(241209): entering with a[106..117]
+       11  13  16  18  7  17  9  10  8  15  12  14  
+   ### Q-PROC(241209): pivot element is a[117] = 113
+   ### Q-PROC(241193): entering with a[99..99]
+       0  
+   ### Q-PROC(241227): entering with a[181..181]
+       82  
+   ### Q-PROC(241227): section a[181..181] sorted
+       82  
+   ### Q-PROC(241193): section a[99..99] sorted
+       0  
+   ### Q-PROC(241227): exits
+   ### Q-PROC(241194): entering with a[198..199]
+       100  99  
+   ### Q-PROC(241156): section a[122..123] sorted
+       23  24  
+   ### Q-PROC(241193): exits
+   ### Q-PROC(241194): pivot element is a[199] = 198
+   ### Q-PROC(241217): entering with a[52..52]
+       -47  
+   ### Q-PROC(241217): section a[52..52] sorted
+       -47  
+   ### Q-PROC(241156): exits
+   ### Q-PROC(241188): entering with a[195..196]
+       96  97  
+   ### Q-PROC(241217): exits
+   ### Q-PROC(241190): exits
+   ### Q-PROC(241188): pivot element is a[196] = 196
+   ### Q-PROC(241197): exits
+   ### Q-PROC(241196): exits
+   ### Q-PROC(241183): entering with a[58..78]
+       -40  -41  -29  -24  -26  -35  -37  -22  -30  -25  -39  -38  -36  -33  -23  -32  -21  -27  -31  -28  -34  
+   ### Q-PROC(241183): pivot element is a[78] = 65
+   ### Q-PROC(241199): entering with a[157..157]
+       58  
+   ### Q-PROC(241198): entering with a[101..104]
+       2  5  3  4  
+   ### Q-PROC(241199): section a[157..157] sorted
+       58  
+   ### Q-PROC(241126): section a[168..171] sorted
+       69  70  71  72  
+   ### Q-PROC(241198): pivot element is a[104] = 103
+   ### Q-PROC(241199): exits
+   ### Q-PROC(241126): exits
+   ### Q-PROC(241192): entering with a[11..20]
+       -79  -81  -87  -86  -85  -80  -88  -82  -83  -84  
+   ### Q-PROC(241192): pivot element is a[20] = 15
+   ### Q-PROC(241200): exits
+   ### Q-PROC(241191): entering with a[81..81]
+       -18  
+   ### Q-PROC(241171): section a[125..125] sorted
+       26  
+   ### Q-PROC(241191): section a[81..81] sorted
+       -18  
+   ### Q-PROC(241195): entering with a[155..155]
+       56  
+   ### Q-PROC(241195): section a[155..155] sorted
+       56  
+   ### Q-PROC(241203): entering with a[192..192]
+       93  
+   ### Q-PROC(241202): entering with a[164..165]
+       66  65  
+   ### Q-PROC(241203): section a[192..192] sorted
+       93  
+   ### Q-PROC(241202): pivot element is a[165] = 164
+   ### Q-PROC(241163): section a[157..158] sorted
+       58  59  
+   ### Q-PROC(241203): exits
+   ### Q-PROC(241205): exits
+   ### Q-PROC(241163): exits
+   ### Q-PROC(241242): entering with a[101..102]
+       2  3  
+   ### Q-PROC(241242): pivot element is a[102] = 102
+   ### Q-PROC(241210): entering with a[119..120]
+       20  21  
+   ### Q-PROC(241210): pivot element is a[120] = 120
+   ### Q-PROC(241211): exits
+   ### Q-PROC(241214): entering with a[86..90]
+       -11  -9  -12  -10  -13  
+   ### Q-PROC(241214): pivot element is a[90] = 86
+   ### Q-PROC(241220): entering with a[38..50]
+       -59  -58  -54  -55  -60  -51  -61  -53  -50  -56  -52  -57  -49  
+   ### Q-PROC(241220): pivot element is a[50] = 50
+   ### Q-PROC(241212): entering with a[3..7]
+       -95  -93  -94  -92  -96  
+   ### Q-PROC(241213): entering with a[23..36]
+       -64  -76  -67  -66  -70  -73  -65  -63  -69  -74  -75  -71  -68  -72  
+   ### Q-PROC(241212): pivot element is a[7] = 3
+   ### Q-PROC(241213): pivot element is a[36] = 27
+   ### Q-PROC(241215): exits
+   ### Q-PROC(241218): entering with a[177..179]
+       78  79  80  
+   ### Q-PROC(241218): pivot element is a[179] = 179
+   ### Q-PROC(241216): entering with a[128..129]
+       30  29  
+   ### Q-PROC(241216): pivot element is a[129] = 128
+   ### Q-PROC(241221): entering with a[184..184]
+       85  
+   ### Q-PROC(241229): entering with a[174..174]
+       75  
+   ### Q-PROC(241221): section a[184..184] sorted
+       85  
+   ### Q-PROC(241225): entering with a[188..189]
+       89  90  
+   ### Q-PROC(241229): section a[174..174] sorted
+       75  
+   ### Q-PROC(241226): entering with a[54..56]
+       -43  -44  -45  
+   ### Q-PROC(241226): pivot element is a[56] = 54
+   ### Q-PROC(241219): exits
+   ### Q-PROC(241223): exits
+   ### Q-PROC(241222): entering with a[93..95]
+       -6  -5  -4  
+   ### Q-PROC(241230): entering with a[186..186]
+       87  
+   ### Q-PROC(241222): pivot element is a[95] = 95
+   ### Q-PROC(241228): exits
+   ### Q-PROC(241230): section a[186..186] sorted
+       87  
+   ### Q-PROC(241235): entering with a[106..112]
+       11  13  7  9  10  8  12  
+   ### Q-PROC(241235): pivot element is a[112] = 111
+   ### Q-PROC(241231): entering with a[97..97]
+       -2  
+   ### Q-PROC(241230): exits
+   ### Q-PROC(241231): section a[97..97] sorted
+       -2  
+   ### Q-PROC(241232): exits
+   ### Q-PROC(241233): entering with a[140..151]
+       48  42  41  50  52  47  44  46  43  51  49  45  
+   ### Q-PROC(241233): pivot element is a[151] = 144
+   ### Q-PROC(241224): entering with a[135..136]
+       37  36  
+   ### Q-PROC(241224): pivot element is a[136] = 135
+   ### Q-PROC(241236): entering with a[114..117]
+       17  15  18  16  
+   ### Q-PROC(241236): pivot element is a[117] = 115
+   ### Q-PROC(241234): exits
+   ### Q-PROC(241237): exits
+   ### Q-PROC(241238): entering with a[199..199]
+       100  
+   ### Q-PROC(241239): entering with a[195..195]
+       96  
+   ### Q-PROC(241238): section a[199..199] sorted
+       100  
+   ### Q-PROC(241240): exits
+   ### Q-PROC(241239): section a[195..195] sorted
+       96  
+   ### Q-PROC(241238): exits
+   ### Q-PROC(241171): exits
+   ### Q-PROC(241191): exits
+   ### Q-PROC(241241): entering with a[58..64]
+       -40  -41  -35  -37  -39  -38  -36  
+   ### Q-PROC(241241): pivot element is a[64] = 63
+   ### Q-PROC(241195): exits
+   ### Q-PROC(241245): entering with a[104..104]
+       5  
+   ### Q-PROC(241245): section a[104..104] sorted
+       5  
+   ### Q-PROC(241243): entering with a[66..78]
+       -30  -25  -26  -29  -24  -33  -23  -32  -21  -27  -31  -28  -22  
+   ### Q-PROC(241245): exits
+   ### Q-PROC(241243): pivot element is a[78] = 77
+   ### Q-PROC(241244): entering with a[11..14]
+       -87  -86  -85  -88  
+   ### Q-PROC(241244): pivot element is a[14] = 11
+   ### Q-PROC(241246): entering with a[16..20]
+       -80  -81  -82  -83  -79  
+   ### Q-PROC(241246): pivot element is a[20] = 20
+   ### Q-PROC(241160): section a[154..155] sorted
+       55  56  
+   ### Q-PROC(241247): exits
+   ### Q-PROC(241252): entering with a[119..119]
+       20  
+   ### Q-PROC(241160): exits
+   ### Q-PROC(241249): entering with a[101..101]
+       2  
+   ### Q-PROC(241252): section a[119..119] sorted
+       20  
+   ### Q-PROC(241254): entering with a[165..165]
+       66  
+   ### Q-PROC(241252): exits
+   ### Q-PROC(241249): section a[101..101] sorted
+       2  
+   ### Q-PROC(241169): section a[192..193] sorted
+       93  94  
+   ### Q-PROC(241255): exits
+   ### Q-PROC(241257): exits
+   ### Q-PROC(241221): exits
+   ### Q-PROC(241225): pivot element is a[189] = 189
+   ### Q-PROC(241290): entering with a[12..14]
+       -86  -85  -87  
+   ### Q-PROC(241290): pivot element is a[14] = 12
+   ### Q-PROC(241259): entering with a[87..90]
+       -9  -12  -10  -11  
+   ### Q-PROC(241258): exits
+   ### Q-PROC(241259): pivot element is a[90] = 88
+   ### Q-PROC(241229): exits
+   ### Q-PROC(241207): section a[184..186] sorted
+       85  86  87  
+   ### Q-PROC(241260): entering with a[38..49]
+       -59  -58  -54  -55  -60  -51  -61  -53  -50  -56  -52  -57  
+   ### Q-PROC(241207): exits
+   ### Q-PROC(241260): pivot element is a[49] = 42
+   ### Q-PROC(241271): exits
+   ### Q-PROC(241262): exits
+   ### Q-PROC(241269): entering with a[4..7]
+       -93  -94  -92  -95  
+   ### Q-PROC(241269): pivot element is a[7] = 4
+   ### Q-PROC(241268): exits
+   ### Q-PROC(241231): exits
+   ### Q-PROC(241263): entering with a[23..26]
+       -76  -73  -74  -75  
+   ### Q-PROC(241263): pivot element is a[26] = 24
+   ### Q-PROC(241270): entering with a[28..36]
+       -64  -65  -63  -69  -67  -66  -71  -68  -70  
+   ### Q-PROC(241264): entering with a[177..178]
+       78  79  
+   ### Q-PROC(241270): pivot element is a[36] = 29
+   ### Q-PROC(241264): pivot element is a[178] = 178
+   ### Q-PROC(241272): entering with a[129..129]
+       30  
+   ### Q-PROC(241266): exits
+   ### Q-PROC(241272): section a[129..129] sorted
+       30  
+   ### Q-PROC(241275): entering with a[106..110]
+       11  7  9  10  8  
+   ### Q-PROC(241278): exits
+   ### Q-PROC(241302): entering with a[5..7]
+       -94  -92  -93  
+   ### Q-PROC(241302): pivot element is a[7] = 6
+   ### Q-PROC(241277): entering with a[112..112]
+       13  
+   ### Q-PROC(241273): exits
+   ### Q-PROC(241277): section a[112..112] sorted
+       13  
+   ### Q-PROC(241274): entering with a[93..94]
+       -6  -5  
+   ### Q-PROC(241276): entering with a[55..56]
+       -44  -43  
+   ### Q-PROC(241277): exits
+   ### Q-PROC(241274): pivot element is a[94] = 94
+   ### Q-PROC(241276): pivot element is a[56] = 56
+   ### Q-PROC(241239): exits
+   ### Q-PROC(241279): entering with a[140..143]
+       42  41  44  43  
+   ### Q-PROC(241279): pivot element is a[143] = 142
+   ### Q-PROC(241282): entering with a[145..151]
+       47  48  46  50  51  49  52  
+   ### Q-PROC(241282): pivot element is a[151] = 151
+   ### Q-PROC(241281): entering with a[114..114]
+       15  
+   ### Q-PROC(241151): section a[81..82] sorted
+       -18  -17  
+   ### Q-PROC(241281): section a[114..114] sorted
+       15  
+   ### Q-PROC(241194): section a[198..199] sorted
+       99  100  
+   ### Q-PROC(241281): exits
+   ### Q-PROC(241151): exits
+   ### Q-PROC(241188): section a[195..196] sorted
+       96  97  
+   ### Q-PROC(241280): exits
+   ### Q-PROC(241194): exits
+   ### Q-PROC(241284): entering with a[136..136]
+       37  
+   ### Q-PROC(241188): exits
+   ### Q-PROC(241283): entering with a[116..117]
+       18  17  
+   ### Q-PROC(241284): section a[136..136] sorted
+       37  
+   ### Q-PROC(241283): pivot element is a[117] = 116
+   ### Q-PROC(241254): section a[165..165] sorted
+       66  
+   ### Q-PROC(241284): exits
+   ### Q-PROC(241249): exits
+   ### Q-PROC(241310): entering with a[7..7]
+       -92  
+   ### Q-PROC(241310): section a[7..7] sorted
+       -92  
+   ### Q-PROC(241169): exits
+   ### Q-PROC(241286): entering with a[66..76]
+       -30  -25  -26  -29  -24  -33  -23  -32  -27  -31  -28  
+   ### Q-PROC(241285): entering with a[58..62]
+       -40  -41  -37  -39  -38  
+   ### Q-PROC(241285): pivot element is a[62] = 61
+   ### Q-PROC(241287): exits
+   ### Q-PROC(241291): entering with a[16..19]
+       -80  -81  -82  -83  
+   ### Q-PROC(241291): pivot element is a[19] = 16
+   ### Q-PROC(241288): entering with a[64..64]
+       -35  
+   ### Q-PROC(241289): entering with a[78..78]
+       -21  
+   ### Q-PROC(241288): section a[64..64] sorted
+       -35  
+   ### Q-PROC(241137): section a[154..158] sorted
+       55  56  57  58  59  
+   ### Q-PROC(241289): section a[78..78] sorted
+       -21  
+   ### Q-PROC(241288): exits
+   ### Q-PROC(241292): exits
+   ### Q-PROC(241289): exits
+   ### Q-PROC(241210): section a[119..120] sorted
+       20  21  
+   ### Q-PROC(241296): entering with a[38..41]
+       -59  -58  -60  -61  
+   ### Q-PROC(241295): entering with a[87..87]
+       -12  
+   ### Q-PROC(241296): pivot element is a[41] = 38
+   ### Q-PROC(241299): entering with a[89..90]
+       -10  -9  
+   ### Q-PROC(241295): section a[87..87] sorted
+       -12  
+   ### Q-PROC(241299): pivot element is a[90] = 90
+   ### Q-PROC(241295): exits
+   ### Q-PROC(241201): section a[174..175] sorted
+       75  76  
+   ### Q-PROC(241293): exits
+   ### Q-PROC(241297): entering with a[13..14]
+       -85  -86  
+   ### Q-PROC(241201): exits
+   ### Q-PROC(241294): entering with a[188..188]
+       89  
+   ### Q-PROC(241300): entering with a[43..49]
+       -51  -55  -53  -50  -56  -52  -54  
+   ### Q-PROC(241300): pivot element is a[49] = 45
+   ### Q-PROC(241298): exits
+   ### Q-PROC(241272): exits
+   ### Q-PROC(241275): pivot element is a[110] = 107
+   ### Q-PROC(241301): exits
+   ### Q-PROC(241303): entering with a[23..23]
+       -76  
+   ### Q-PROC(241305): entering with a[28..28]
+       -71  
+   ### Q-PROC(241303): section a[23..23] sorted
+       -76  
+   ### Q-PROC(241308): entering with a[30..36]
+       -63  -69  -67  -66  -64  -68  -65  
+   ### Q-PROC(241308): pivot element is a[36] = 34
+   ### Q-PROC(241304): entering with a[177..177]
+       78  
+   ### Q-PROC(241329): entering with a[43..44]
+       -55  -56  
+   ### Q-PROC(241329): pivot element is a[44] = 43
+   ### Q-PROC(241306): exits
+   ### Q-PROC(241304): section a[177..177] sorted
+       78  
+   ### Q-PROC(241307): entering with a[25..26]
+       -74  -73  
+   ### Q-PROC(241331): entering with a[46..49]
+       -50  -51  -52  -53  
+   ### Q-PROC(241304): exits
+   ### Q-PROC(241331): pivot element is a[49] = 46
+   ### Q-PROC(241307): pivot element is a[26] = 26
+   ### Q-PROC(241254): exits
+   ### Q-PROC(241309): entering with a[5..5]
+       -94  
+   ### Q-PROC(241314): entering with a[143..143]
+       44  
+   ### Q-PROC(241311): entering with a[140..141]
+       42  41  
+   ### Q-PROC(241338): entering with a[47..49]
+       -51  -52  -50  
+   ### Q-PROC(241338): pivot element is a[49] = 49
+   ### Q-PROC(241310): exits
+   ### Q-PROC(241313): entering with a[93..93]
+       -6  
+   ### Q-PROC(241312): entering with a[55..55]
+       -44  
+   ### Q-PROC(241333): exits
+   ### Q-PROC(241313): section a[93..93] sorted
+       -6  
+   ### Q-PROC(241242): section a[101..102] sorted
+       2  3  
+   ### Q-PROC(241312): section a[55..55] sorted
+       -44  
+   ### Q-PROC(241132): section a[81..84] sorted
+       -18  -17  -16  -15  
+   ### Q-PROC(241341): entering with a[47..48]
+       -51  -52  
+   ### Q-PROC(241341): pivot element is a[48] = 47
+   ### Q-PROC(241315): exits
+   ### Q-PROC(241320): entering with a[117..117]
+       18  
+   ### Q-PROC(241132): exits
+   ### Q-PROC(241320): section a[117..117] sorted
+       18  
+   ### Q-PROC(241342): exits
+   ### Q-PROC(241286): pivot element is a[76] = 71
+   ### Q-PROC(241320): exits
+   ### Q-PROC(241146): section a[195..199] sorted
+       96  97  98  99  100  
+   ### Q-PROC(241224): section a[135..136] sorted
+       36  37  
+   ### Q-PROC(241146): exits
+   ### Q-PROC(241317): entering with a[145..150]
+       47  48  46  50  51  49  
+   ### Q-PROC(241317): pivot element is a[150] = 148
+   ### Q-PROC(241318): exits
+   ### Q-PROC(241319): exits
+   ### Q-PROC(241316): exits
+   ### Q-PROC(241137): exits
+   ### Q-PROC(241210): exits
+   ### Q-PROC(241321): entering with a[58..60]
+       -40  -41  -39  
+   ### Q-PROC(241321): pivot element is a[60] = 60
+   ### Q-PROC(241323): entering with a[62..62]
+       -37  
+   ### Q-PROC(241323): section a[62..62] sorted
+       -37  
+   ### Q-PROC(241283): section a[116..117] sorted
+       17  18  
+   ### Q-PROC(241323): exits
+   ### Q-PROC(241324): entering with a[17..19]
+       -81  -82  -80  
+   ### Q-PROC(241297): pivot element is a[14] = 13
+   ### Q-PROC(241324): pivot element is a[19] = 19
+   ### Q-PROC(241283): exits
+   ### Q-PROC(241322): exits
+   ### Q-PROC(241294): section a[188..188] sorted
+       89  
+   ### Q-PROC(241328): entering with a[39..41]
+       -58  -60  -59  
+   ### Q-PROC(241328): pivot element is a[41] = 40
+   ### Q-PROC(241325): exits
+   ### Q-PROC(241326): entering with a[89..89]
+       -10  
+   ### Q-PROC(241236): section a[114..117] sorted
+       15  16  17  18  
+   ### Q-PROC(241327): exits
+   ### Q-PROC(241326): section a[89..89] sorted
+       -10  
+   ### Q-PROC(241236): exits
+   ### Q-PROC(241305): section a[28..28] sorted
+       -71  
+   ### Q-PROC(241305): exits
+   ### Q-PROC(241326): exits
+   ### Q-PROC(241303): exits
+   ### Q-PROC(241216): section a[128..129] sorted
+       29  30  
+   ### Q-PROC(241330): entering with a[106..106]
+       7  
+   ### Q-PROC(241309): section a[5..5] sorted
+       -94  
+   ### Q-PROC(241332): entering with a[108..110]
+       9  10  11  
+   ### Q-PROC(241332): pivot element is a[110] = 110
+   ### Q-PROC(241314): section a[143..143] sorted
+       44  
+   ### Q-PROC(241311): pivot element is a[141] = 140
+   ### Q-PROC(241314): exits
+   ### Q-PROC(241202): section a[164..165] sorted
+       65  66  
+   ### Q-PROC(241336): entering with a[44..44]
+       -55  
+   ### Q-PROC(241336): section a[44..44] sorted
+       -55  
+   ### Q-PROC(241264): section a[177..178] sorted
+       78  79  
+   ### Q-PROC(241202): exits
+   ### Q-PROC(241336): exits
+   ### Q-PROC(241313): exits
+   ### Q-PROC(241264): exits
+   ### Q-PROC(241242): exits
+   ### Q-PROC(241335): exits
+   ### Q-PROC(241334): entering with a[30..33]
+       -69  -67  -66  -68  
+   ### Q-PROC(241337): entering with a[25..25]
+       -74  
+   ### Q-PROC(241340): exits
+   ### Q-PROC(241339): entering with a[35..36]
+       -63  -64  
+   ### Q-PROC(241339): pivot element is a[36] = 35
+   ### Q-PROC(241312): exits
+   ### Q-PROC(241224): exits
+   ### Q-PROC(241343): exits
+   ### Q-PROC(241344): entering with a[66..70]
+       -30  -29  -33  -32  -31  
+   ### Q-PROC(241344): pivot element is a[70] = 68
+   ### Q-PROC(241346): entering with a[48..48]
+       -51  
+   ### Q-PROC(241345): entering with a[72..76]
+       -23  -25  -27  -24  -26  
+   ### Q-PROC(241345): pivot element is a[76] = 73
+   ### Q-PROC(241347): entering with a[145..147]
+       47  48  46  
+   ### Q-PROC(241348): entering with a[149..150]
+       51  50  
+   ### Q-PROC(241347): pivot element is a[147] = 145
+   ### Q-PROC(241348): pivot element is a[150] = 149
+   ### Q-PROC(241294): exits
+   ### Q-PROC(241352): exits
+   ### Q-PROC(241353): exits
+   ### Q-PROC(241216): exits
+   ### Q-PROC(241351): entering with a[17..18]
+       -81  -82  
+   ### Q-PROC(241351): pivot element is a[18] = 17
+   ### Q-PROC(241354): entering with a[14..14]
+       -85  
+   ### Q-PROC(241349): entering with a[58..59]
+       -40  -41  
+   ### Q-PROC(241349): pivot element is a[59] = 58
+   ### Q-PROC(241330): section a[106..106] sorted
+       7  
+   ### Q-PROC(241350): exits
+   ### Q-PROC(241309): exits
+   ### Q-PROC(241371): exits
+   ### Q-PROC(241299): section a[89..90] sorted
+       -10  -9  
+   ### Q-PROC(241372): entering with a[18..18]
+       -81  
+   ### Q-PROC(241355): entering with a[39..39]
+       -60  
+   ### Q-PROC(241356): entering with a[41..41]
+       -58  
+   ### Q-PROC(241355): section a[39..39] sorted
+       -60  
+   ### Q-PROC(241372): section a[18..18] sorted
+       -81  
+   ### Q-PROC(241299): exits
+   ### Q-PROC(241356): section a[41..41] sorted
+       -58  
+   ### Q-PROC(241355): exits
+   ### Q-PROC(241334): pivot element is a[33] = 31
+   ### Q-PROC(241356): exits
+   ### Q-PROC(241218): section a[177..179] sorted
+       78  79  80  
+   ### Q-PROC(241329): section a[43..44] sorted
+       -56  -55  
+   ### Q-PROC(241274): section a[93..94] sorted
+       -6  -5  
+   ### Q-PROC(241198): section a[101..104] sorted
+       2  3  4  5  
+   ### Q-PROC(241337): section a[25..25] sorted
+       -74  
+   ### Q-PROC(241274): exits
+   ### Q-PROC(241259): section a[87..90] sorted
+       -12  -11  -10  -9  
+   ### Q-PROC(241198): exits
+   ### Q-PROC(241337): exits
+   ### Q-PROC(241259): exits
+   ### Q-PROC(241170): section a[164..166] sorted
+       65  66  67  
+   ### Q-PROC(241357): entering with a[108..109]
+       9  10  
+   ### Q-PROC(241357): pivot element is a[109] = 109
+   ### Q-PROC(241170): exits
+   ### Q-PROC(241359): exits
+   ### Q-PROC(241358): exits
+   ### Q-PROC(241360): entering with a[141..141]
+       42  
+   ### Q-PROC(241346): section a[48..48] sorted
+       -51  
+   ### Q-PROC(241181): section a[134..136] sorted
+       35  36  37  
+   ### Q-PROC(241276): section a[55..56] sorted
+       -44  -43  
+   ### Q-PROC(241346): exits
+   ### Q-PROC(241181): exits
+   ### Q-PROC(241276): exits
+   ### Q-PROC(241363): entering with a[36..36]
+       -63  
+   ### Q-PROC(241354): section a[14..14] sorted
+       -85  
+   ### Q-PROC(241363): section a[36..36] sorted
+       -63  
+   ### Q-PROC(241361): exits
+   ### Q-PROC(241363): exits
+   ### Q-PROC(241354): exits
+   ### Q-PROC(241362): entering with a[66..67]
+       -33  -32  
+   ### Q-PROC(241364): entering with a[69..70]
+       -29  -30  
+   ### Q-PROC(241362): pivot element is a[67] = 67
+   ### Q-PROC(241364): pivot element is a[70] = 69
+   ### Q-PROC(241366): entering with a[74..76]
+       -23  -24  -25  
+   ### Q-PROC(241366): pivot element is a[76] = 74
+   ### Q-PROC(241370): entering with a[146..147]
+       48  47  
+   ### Q-PROC(241365): entering with a[72..72]
+       -27  
+   ### Q-PROC(241173): section a[127..129] sorted
+       28  29  30  
+   ### Q-PROC(241365): section a[72..72] sorted
+       -27  
+   ### Q-PROC(241225): section a[188..189] sorted
+       89  90  
+   ### Q-PROC(241339): section a[35..36] sorted
+       -64  -63  
+   ### Q-PROC(241365): exits
+   ### Q-PROC(241369): entering with a[150..150]
+       51  
+   ### Q-PROC(241173): exits
+   ### Q-PROC(241225): exits
+   ### Q-PROC(241369): section a[150..150] sorted
+       51  
+   ### Q-PROC(241368): exits
+   ### Q-PROC(241339): exits
+   ### Q-PROC(241369): exits
+   ### Q-PROC(241330): exits
+   ### Q-PROC(241367): exits
+   ### Q-PROC(241372): exits
+   ### Q-PROC(241373): exits
+   ### Q-PROC(241374): entering with a[59..59]
+       -40  
+   ### Q-PROC(241218): exits
+   ### Q-PROC(241375): entering with a[30..30]
+       -69  
+   ### Q-PROC(241374): section a[59..59] sorted
+       -40  
+   ### Q-PROC(241329): exits
+   ### Q-PROC(241375): section a[30..30] sorted
+       -69  
+   ### Q-PROC(241208): section a[188..190] sorted
+       89  90  91  
+   ### Q-PROC(241374): exits
+   ### Q-PROC(241375): exits
+   ### Q-PROC(241376): entering with a[32..33]
+       -66  -67  
+   ### Q-PROC(241376): pivot element is a[33] = 32
+   ### Q-PROC(241208): exits
+   ### Q-PROC(241302): section a[5..7] sorted
+       -94  -93  -92  
+   ### Q-PROC(241328): section a[39..41] sorted
+       -60  -59  -58  
+   ### Q-PROC(241302): exits
+   ### Q-PROC(241177): section a[99..104] sorted
+       0  1  2  3  4  5  
+   ### Q-PROC(241144): section a[162..166] sorted
+       63  64  65  66  67  
+   ### Q-PROC(241214): section a[86..90] sorted
+       -13  -12  -11  -10  -9  
+   ### Q-PROC(241144): exits
+   ### Q-PROC(241307): section a[25..26] sorted
+       -74  -73  
+   ### Q-PROC(241269): section a[4..7] sorted
+       -95  -94  -93  -92  
+   ### Q-PROC(241222): section a[93..95] sorted
+       -6  -5  -4  
+   ### Q-PROC(241214): exits
+   ### Q-PROC(241269): exits
+   ### Q-PROC(241378): exits
+   ### Q-PROC(241307): exits
+   ### Q-PROC(241222): exits
+   ### Q-PROC(241360): section a[141..141] sorted
+       42  
+   ### Q-PROC(241377): entering with a[108..108]
+       9  
+   ### Q-PROC(241360): exits
+   ### Q-PROC(241297): section a[13..14] sorted
+       -86  -85  
+   ### Q-PROC(241155): section a[134..137] sorted
+       35  36  37  38  
+   ### Q-PROC(241381): exits
+   ### Q-PROC(241311): section a[140..141] sorted
+       41  42  
+   ### Q-PROC(241379): entering with a[66..66]
+       -33  
+   ### Q-PROC(241370): pivot element is a[147] = 146
+   ### Q-PROC(241311): exits
+   ### Q-PROC(241379): section a[66..66] sorted
+       -33  
+   ### Q-PROC(241226): section a[54..56] sorted
+       -45  -44  -43  
+   ### Q-PROC(241341): section a[47..48] sorted
+       -52  -51  
+   ### Q-PROC(241341): exits
+   ### Q-PROC(241380): exits
+   ### Q-PROC(241382): entering with a[70..70]
+       -29  
+   ### Q-PROC(241384): entering with a[75..76]
+       -24  -23  
+   ### Q-PROC(241382): section a[70..70] sorted
+       -29  
+   ### Q-PROC(241384): pivot element is a[76] = 76
+   ### Q-PROC(241383): exits
+   ### Q-PROC(241382): exits
+   ### Q-PROC(241351): section a[17..18] sorted
+       -82  -81  
+   ### Q-PROC(241351): exits
+   ### Q-PROC(241348): section a[149..150] sorted
+       50  51  
+   ### Q-PROC(241158): section a[125..129] sorted
+       26  27  28  29  30  
+   ### Q-PROC(241328): exits
+   ### Q-PROC(241158): exits
+   ### Q-PROC(241364): section a[69..70] sorted
+       -30  -29  
+   ### Q-PROC(241324): section a[17..19] sorted
+       -82  -81  -80  
+   ### Q-PROC(241364): exits
+   ### Q-PROC(241177): exits
+   ### Q-PROC(241324): exits
+   ### Q-PROC(241385): exits
+   ### Q-PROC(241166): section a[184..190] sorted
+       85  86  87  88  89  90  91  
+   ### Q-PROC(241166): exits
+   ### Q-PROC(241204): section a[177..181] sorted
+       78  79  80  81  82  
+   ### Q-PROC(241349): section a[58..59] sorted
+       -41  -40  
+   ### Q-PROC(241204): exits
+   ### Q-PROC(241386): entering with a[33..33]
+       -66  
+   ### Q-PROC(241386): section a[33..33] sorted
+       -66  
+   ### Q-PROC(241377): section a[108..108] sorted
+       9  
+   ### Q-PROC(241386): exits
+   ### Q-PROC(241124): section a[160..166] sorted
+       61  62  63  64  65  66  67  
+   ### Q-PROC(241297): exits
+   ### Q-PROC(241377): exits
+   ### Q-PROC(241165): section a[174..181] sorted
+       75  76  77  78  79  80  81  82  
+   ### Q-PROC(241124): exits
+   ### Q-PROC(241184): section a[93..97] sorted
+       -6  -5  -4  -3  -2  
+   ### Q-PROC(241180): section a[86..91] sorted
+       -13  -12  -11  -10  -9  -8  
+   ### Q-PROC(241263): section a[23..26] sorted
+       -76  -75  -74  -73  
+   ### Q-PROC(241184): exits
+   ### Q-PROC(241155): exits
+   ### Q-PROC(241180): exits
+   ### Q-PROC(241212): section a[3..7] sorted
+       -96  -95  -94  -93  -92  
+   ### Q-PROC(241263): exits
+   ### Q-PROC(241376): section a[32..33] sorted
+       -67  -66  
+   ### Q-PROC(241290): section a[12..14] sorted
+       -87  -86  -85  
+   ### Q-PROC(241054): section a[160..171] sorted
+       61  62  63  64  65  66  67  68  69  70  71  72  
+   ### Q-PROC(241357): section a[108..109] sorted
+       9  10  
+   ### Q-PROC(241212): exits
+   ### Q-PROC(241376): exits
+   ### Q-PROC(241290): exits
+   ### Q-PROC(241054): exits
+   ### Q-PROC(241357): exits
+   ### Q-PROC(241379): exits
+   ### Q-PROC(241226): exits
+   ### Q-PROC(241279): section a[140..143] sorted
+       41  42  43  44  
+   ### Q-PROC(241387): exits
+   ### Q-PROC(241388): entering with a[147..147]
+       48  
+   ### Q-PROC(241388): section a[147..147] sorted
+       48  
+   ### Q-PROC(241388): exits
+   ### Q-PROC(241348): exits
+   ### Q-PROC(241338): section a[47..49] sorted
+       -52  -51  -50  
+   ### Q-PROC(241390): exits
+   ### Q-PROC(241338): exits
+   ### Q-PROC(241389): entering with a[75..75]
+       -24  
+   ### Q-PROC(241349): exits
+   ### Q-PROC(241296): section a[38..41] sorted
+       -61  -60  -59  -58  
+   ### Q-PROC(241136): section a[122..129] sorted
+       23  24  25  26  27  28  29  30  
+   ### Q-PROC(241136): exits
+   ### Q-PROC(241291): section a[16..19] sorted
+       -83  -82  -81  -80  
+   ### Q-PROC(241143): section a[184..193] sorted
+       85  86  87  88  89  90  91  92  93  94  
+   ### Q-PROC(241291): exits
+   ### Q-PROC(241321): section a[58..60] sorted
+       -41  -40  -39  
+   ### Q-PROC(241165): exits
+   ### Q-PROC(241143): exits
+   ### Q-PROC(241321): exits
+   ### Q-PROC(241332): section a[108..110] sorted
+       9  10  11  
+   ### Q-PROC(241244): section a[11..14] sorted
+       -88  -87  -86  -85  
+   ### Q-PROC(241175): section a[86..97] sorted
+       -13  -12  -11  -10  -9  -8  -7  -6  -5  -4  -3  -2  
+   ### Q-PROC(241244): exits
+   ### Q-PROC(241279): exits
+   ### Q-PROC(241145): section a[174..182] sorted
+       75  76  77  78  79  80  81  82  83  
+   ### Q-PROC(241175): exits
+   ### Q-PROC(241285): section a[58..62] sorted
+       -41  -40  -39  -38  -37  
+   ### Q-PROC(241127): section a[184..199] sorted
+       85  86  87  88  89  90  91  92  93  94  95  96  97  98  99  100  
+   ### Q-PROC(241122): section a[122..132] sorted
+       23  24  25  26  27  28  29  30  31  32  33  
+   ### Q-PROC(241246): section a[16..20] sorted
+       -83  -82  -81  -80  -79  
+   ### Q-PROC(241145): exits
+   ### Q-PROC(241285): exits
+   ### Q-PROC(241127): exits
+   ### Q-PROC(241334): section a[30..33] sorted
+       -69  -68  -67  -66  
+   ### Q-PROC(241122): exits
+   ### Q-PROC(241246): exits
+   ### Q-PROC(241174): section a[3..8] sorted
+       -96  -95  -94  -93  -92  -91  
+   ### Q-PROC(241174): exits
+   ### Q-PROC(241362): section a[66..67] sorted
+       -33  -32  
+   ### Q-PROC(241179): section a[52..56] sorted
+       -47  -46  -45  -44  -43  
+   ### Q-PROC(241389): section a[75..75] sorted
+       -24  
+   ### Q-PROC(241179): exits
+   ### Q-PROC(241370): section a[146..147] sorted
+       47  48  
+   ### Q-PROC(241389): exits
+   ### Q-PROC(241150): section a[86..104] sorted
+       -13  -12  -11  -10  -9  -8  -7  -6  -5  -4  -3  -2  -1  0  1  2  3  4  5  
+   ### Q-PROC(241370): exits
+   ### Q-PROC(241296): exits
+   ### Q-PROC(241150): exits
+   ### Q-PROC(241331): section a[46..49] sorted
+       -53  -52  -51  -50  
+   ### Q-PROC(241331): exits
+   ### Q-PROC(241332): exits
+   ### Q-PROC(241334): exits
+   ### Q-PROC(241241): section a[58..64] sorted
+       -41  -40  -39  -38  -37  -36  -35  
+   ### Q-PROC(241125): section a[173..182] sorted
+       74  75  76  77  78  79  80  81  82  83  
+   ### Q-PROC(241241): exits
+   ### Q-PROC(241308): section a[30..36] sorted
+       -69  -68  -67  -66  -65  -64  -63  
+   ### Q-PROC(241275): section a[106..110] sorted
+       7  8  9  10  11  
+   ### Q-PROC(241125): exits
+   ### Q-PROC(241192): section a[11..20] sorted
+       -88  -87  -86  -85  -84  -83  -82  -81  -80  -79  
+   ### Q-PROC(241308): exits
+   ### Q-PROC(241362): exits
+   ### Q-PROC(241275): exits
+   ### Q-PROC(241192): exits
+   ### Q-PROC(241147): section a[2..8] sorted
+       -97  -96  -95  -94  -93  -92  -91  
+   ### Q-PROC(241347): section a[145..147] sorted
+       46  47  48  
+   ### Q-PROC(241147): exits
+   ### Q-PROC(241300): section a[43..49] sorted
+       -56  -55  -54  -53  -52  -51  -50  
+   ### Q-PROC(241300): exits
+   ### Q-PROC(241384): section a[75..76] sorted
+       -24  -23  
+   ### Q-PROC(241384): exits
+   ### Q-PROC(241129): section a[2..9] sorted
+       -97  -96  -95  -94  -93  -92  -91  -90  
+   ### Q-PROC(241235): section a[106..112] sorted
+       7  8  9  10  11  12  13  
+   ### Q-PROC(241347): exits
+   ### Q-PROC(241270): section a[28..36] sorted
+       -71  -70  -69  -68  -67  -66  -65  -64  -63  
+   ### Q-PROC(241344): section a[66..70] sorted
+       -33  -32  -31  -30  -29  
+   ### Q-PROC(241344): exits
+   ### Q-PROC(241176): section a[11..21] sorted
+       -88  -87  -86  -85  -84  -83  -82  -81  -80  -79  -78  
+   ### Q-PROC(241317): section a[145..150] sorted
+       46  47  48  49  50  51  
+   ### Q-PROC(241176): exits
+   ### Q-PROC(241056): section a[173..199] sorted
+       74  75  76  77  78  79  80  81  82  83  84  85  86  87  88  89  90  91  92  93  94  95  96  97  98  99  100  
+   ### Q-PROC(241129): exits
+   ### Q-PROC(241317): exits
+   ### Q-PROC(241056): exits
+   ### Q-PROC(241235): exits
+   ### Q-PROC(241366): section a[74..76] sorted
+       -25  -24  -23  
+   ### Q-PROC(241366): exits
+   ### Q-PROC(241270): exits
+   ### Q-PROC(241260): section a[38..49] sorted
+       -61  -60  -59  -58  -57  -56  -55  -54  -53  -52  -51  -50  
+   ### Q-PROC(241282): section a[145..151] sorted
+       46  47  48  49  50  51  52  
+   ### Q-PROC(240844): section a[0..9] sorted
+       -99  -98  -97  -96  -95  -94  -93  -92  -91  -90  
+   ### Q-PROC(240742): section a[160..199] sorted
+       61  62  63  64  65  66  67  68  69  70  71  72  73  74  75  76  77  78  79  80  81  82  83  84  85  86  87  88  89  90  91  92  93  94  95  96  97  98  99  100  
+   ### Q-PROC(241282): exits
+   ### Q-PROC(241209): section a[106..117] sorted
+       7  8  9  10  11  12  13  14  15  16  17  18  
+   ### Q-PROC(240844): exits
+   ### Q-PROC(241213): section a[23..36] sorted
+       -76  -75  -74  -73  -72  -71  -70  -69  -68  -67  -66  -65  -64  -63  
+   ### Q-PROC(240742): exits
+   ### Q-PROC(241260): exits
+   ### Q-PROC(241345): section a[72..76] sorted
+       -27  -26  -25  -24  -23  
+   ### Q-PROC(241209): exits
+   ### Q-PROC(241213): exits
+   ### Q-PROC(241345): exits
+   ### Q-PROC(241286): section a[66..76] sorted
+       -33  -32  -31  -30  -29  -28  -27  -26  -25  -24  -23  
+   ### Q-PROC(241286): exits
+   ### Q-PROC(241220): section a[38..50] sorted
+       -61  -60  -59  -58  -57  -56  -55  -54  -53  -52  -51  -50  -49  
+   ### Q-PROC(241233): section a[140..151] sorted
+       41  42  43  44  45  46  47  48  49  50  51  52  
+   ### Q-PROC(241154): section a[106..120] sorted
+       7  8  9  10  11  12  13  14  15  16  17  18  19  20  21  
+   ### Q-PROC(241220): exits
+   ### Q-PROC(241233): exits
+   ### Q-PROC(241154): exits
+   ### Q-PROC(241185): section a[139..151] sorted
+       40  41  42  43  44  45  46  47  48  49  50  51  52  
+   ### Q-PROC(241243): section a[66..78] sorted
+       -33  -32  -31  -30  -29  -28  -27  -26  -25  -24  -23  -22  -21  
+   ### Q-PROC(241185): exits
+   ### Q-PROC(241178): section a[23..50] sorted
+       -76  -75  -74  -73  -72  -71  -70  -69  -68  -67  -66  -65  -64  -63  -62  -61  -60  -59  -58  -57  -56  -55  -54  -53  -52  -51  -50  -49  
+   ### Q-PROC(241133): section a[86..120] sorted
+       -13  -12  -11  -10  -9  -8  -7  -6  -5  -4  -3  -2  -1  0  1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17  18  19  20  21  
+   ### Q-PROC(241243): exits
+   ### Q-PROC(241178): exits
+   ### Q-PROC(241133): exits
+   ### Q-PROC(241183): section a[58..78] sorted
+       -41  -40  -39  -38  -37  -36  -35  -34  -33  -32  -31  -30  -29  -28  -27  -26  -25  -24  -23  -22  -21  
+   ### Q-PROC(241121): section a[81..120] sorted
+       -18  -17  -16  -15  -14  -13  -12  -11  -10  -9  -8  -7  -6  -5  -4  -3  -2  -1  0  1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17  18  19  20  21  
+   ### Q-PROC(241157): section a[139..152] sorted
+       40  41  42  43  44  45  46  47  48  49  50  51  52  53  
+   ### Q-PROC(241149): section a[11..50] sorted
+       -88  -87  -86  -85  -84  -83  -82  -81  -80  -79  -78  -77  -76  -75  -74  -73  -72  -71  -70  -69  -68  -67  -66  -65  -64  -63  -62  -61  -60  -59  -58  -57  -56  -55  -54  -53  -52  -51  -50  -49  
+   ### Q-PROC(241183): exits
+   ### Q-PROC(241121): exits
+   ### Q-PROC(241157): exits
+   ### Q-PROC(241149): exits
+   ### Q-PROC(241152): section a[52..78] sorted
+       -47  -46  -45  -44  -43  -42  -41  -40  -39  -38  -37  -36  -35  -34  -33  -32  -31  -30  -29  -28  -27  -26  -25  -24  -23  -22  -21  
+   ### Q-PROC(241135): section a[134..152] sorted
+       35  36  37  38  39  40  41  42  43  44  45  46  47  48  49  50  51  52  53  
+   ### Q-PROC(241152): exits
+   ### Q-PROC(241135): exits
+   ### Q-PROC(241123): section a[134..158] sorted
+       35  36  37  38  39  40  41  42  43  44  45  46  47  48  49  50  51  52  53  54  55  56  57  58  59  
+   ### Q-PROC(241123): exits
+   ### Q-PROC(241130): section a[11..78] sorted
+       -88  -87  -86  -85  -84  -83  -82  -81  -80  -79  -78  -77  -76  -75  -74  -73  -72  -71  -70  -69  -68  -67  -66  -65  -64  -63  -62  -61  -60  -59  -58  -57  -56  -55  -54  -53  -52  -51  -50  -49  -48  -47  -46  -45  -44  -43  -42  -41  -40  -39  -38  -37  -36  -35  -34  -33  -32  -31  -30  -29  -28  -27  -26  -25  -24  -23  -22  -21  
+   ### Q-PROC(241130): exits
+   ### Q-PROC(241120): section a[11..79] sorted
+       -88  -87  -86  -85  -84  -83  -82  -81  -80  -79  -78  -77  -76  -75  -74  -73  -72  -71  -70  -69  -68  -67  -66  -65  -64  -63  -62  -61  -60  -59  -58  -57  -56  -55  -54  -53  -52  -51  -50  -49  -48  -47  -46  -45  -44  -43  -42  -41  -40  -39  -38  -37  -36  -35  -34  -33  -32  -31  -30  -29  -28  -27  -26  -25  -24  -23  -22  -21  -20  
+   ### Q-PROC(240740): section a[122..158] sorted
+       23  24  25  26  27  28  29  30  31  32  33  34  35  36  37  38  39  40  41  42  43  44  45  46  47  48  49  50  51  52  53  54  55  56  57  58  59  
+   ### Q-PROC(241120): exits
+   ### Q-PROC(240740): exits
+   ### Q-PROC(240715): section a[122..199] sorted
+       23  24  25  26  27  28  29  30  31  32  33  34  35  36  37  38  39  40  41  42  43  44  45  46  47  48  49  50  51  52  53  54  55  56  57  58  59  60  61  62  63  64  65  66  67  68  69  70  71  72  73  74  75  76  77  78  79  80  81  82  83  84  85  86  87  88  89  90  91  92  93  94  95  96  97  98  99  100  
+   ### Q-PROC(240846): section a[11..120] sorted
+       -88  -87  -86  -85  -84  -83  -82  -81  -80  -79  -78  -77  -76  -75  -74  -73  -72  -71  -70  -69  -68  -67  -66  -65  -64  -63  -62  -61  -60  -59  -58  -57  -56  -55  -54  -53  -52  -51  -50  -49  -48  -47  -46  -45  -44  -43  -42  -41  -40  -39  -38  -37  -36  -35  -34  -33  -32  -31  -30  -29  -28  -27  -26  -25  -24  -23  -22  -21  -20  -19  -18  -17  -16  -15  -14  -13  -12  -11  -10  -9  -8  -7  -6  -5  -4  -3  -2  -1  0  1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17  18  19  20  21  
+   ### Q-PROC(240715): exits
+   ### Q-PROC(240846): exits
+   ### Q-PROC(240713): section a[0..120] sorted
+       -99  -98  -97  -96  -95  -94  -93  -92  -91  -90  -89  -88  -87  -86  -85  -84  -83  -82  -81  -80  -79  -78  -77  -76  -75  -74  -73  -72  -71  -70  -69  -68  -67  -66  -65  -64  -63  -62  -61  -60  -59  -58  -57  -56  -55  -54  -53  -52  -51  -50  -49  -48  -47  -46  -45  -44  -43  -42  -41  -40  -39  -38  -37  -36  -35  -34  -33  -32  -31  -30  -29  -28  -27  -26  -25  -24  -23  -22  -21  -20  -19  -18  -17  -16  -15  -14  -13  -12  -11  -10  -9  -8  -7  -6  -5  -4  -3  -2  -1  0  1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17  18  19  20  21  
+   ### Q-PROC(240713): exits
+   ### Q-PROC(240710): section a[0..199] sorted
+       -99  -98  -97  -96  -95  -94  -93  -92  -91  -90  -89  -88  -87  -86  -85  -84  -83  -82  -81  -80  -79  -78  -77  -76  -75  -74  -73  -72  -71  -70  -69  -68  -67  -66  -65  -64  -63  -62  -61  -60  -59  -58  -57  -56  -55  -54  -53  -52  -51  -50  -49  -48  -47  -46  -45  -44  -43  -42  -41  -40  -39  -38  -37  -36  -35  -34  -33  -32  -31  -30  -29  -28  -27  -26  -25  -24  -23  -22  -21  -20  -19  -18  -17  -16  -15  -14  -13  -12  -11  -10  -9  -8  -7  -6  -5  -4  -3  -2  -1  0  1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35  36  37  38  39  40  41  42  43  44  45  46  47  48  49  50  51  52  53  54  55  56  57  58  59  60  61  62  63  64  65  66  67  68  69  70  71  72  73  74  75  76  77  78  79  80  81  82  83  84  85  86  87  88  89  90  91  92  93  94  95  96  97  98  99  100  
+   ### Q-PROC(240710): exits
+*** MAIN: sorted array by qsort:
+     -99 -98 -97 -96 -95 -94 -93 -92 -91 -90 -89 -88 -87 -86 -85 -84 -83 -82 -81 -80 -79 -78 -77 -76 -75 -74 -73 -72 -71 -70 -69 -68 -67 -66 -65 -64 -63 -62 -61 -60 -59 -58 -57 -56 -55 -54 -53 -52 -51 -50 -49 -48 -47 -46 -45 -44 -43 -42 -41 -40 -39 -38 -37 -36 -35 -34 -33 -32 -31 -30 -29 -28 -27 -26 -25 -24 -23 -22 -21 -20 -19 -18 -17 -16 -15 -14 -13 -12 -11 -10 -9 -8 -7 -6 -5 -4 -3 -2 -1 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 
+*** MAIN: merged array:
+     -199 -198 -197 -196 -195 -194 -193 -192 -191 -190 -189 -188 -187 -186 -185 -184 -183 -182 -181 -180 -179 -178 -177 -176 -175 -174 -173 -172 -171 -170 -169 -168 -167 -166 -165 -164 -163 -162 -161 -160 -159 -158 -157 -156 -155 -154 -153 -152 -151 -150 -149 -148 -147 -146 -145 -144 -143 -142 -141 -140 -139 -138 -137 -136 -135 -134 -133 -132 -131 -130 -129 -128 -127 -126 -125 -124 -123 -122 -121 -120 -119 -118 -117 -116 -115 -114 -113 -112 -111 -110 -109 -108 -107 -106 -105 -104 -103 -102 -101 -100 -99 -98 -97 -96 -95 -94 -93 -92 -91 -90 -89 -88 -87 -86 -85 -84 -83 -82 -81 -80 -79 -78 -77 -76 -75 -74 -73 -72 -71 -70 -69 -68 -67 -66 -65 -64 -63 -62 -61 -60 -59 -58 -57 -56 -55 -54 -53 -52 -51 -50 -49 -48 -47 -46 -45 -44 -43 -42 -41 -40 -39 -38 -37 -36 -35 -34 -33 -32 -31 -30 -29 -28 -27 -26 -25 -24 -23 -22 -21 -20 -19 -18 -17 -16 -15 -14 -13 -12 -11 -10 -9 -8 -7 -6 -5 -4 -3 -2 -1 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 101 102 103 104 105 106 107 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 125 126 127 128 129 130 131 132 133 134 135 136 137 138 139 140 141 142 143 144 145 146 147 148 149 150 151 152 153 154 155 156 157 158 159 160 161 162 163 164 165 166 167 168 169 170 171 172 173 174 175 176 177 178 179 180 181 182 183 184 185 186 187 188 189 190 191 192 193 194 195 196 197 198 199 200 
+*** MAIN: qsort shared memory successfully detached
+*** MAIN: qsort shared memory successfully removed
+
+*** MAIN: merge x[] shared memory successfully detached
+*** MAIN: merge x[] shared memory successfully removed
+
+*** MAIN: merge y[] shared memory successfully detached
+*** MAIN: merge y[] shared memory successfully removed
+
+*** MAIN: merge output shared memory successfully detached
+*** MAIN: merge output shared memory successfully removed
+
+
