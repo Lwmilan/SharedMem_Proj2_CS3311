@@ -8,7 +8,8 @@ CFLAGS  = -g -Wall
 
 # the build target executable:
 TARGET = qsort
-
+TARGET2 = merge
+TARGET3 = main
 all: $(TARGET)
 
 $(TARGET): $(TARGET).c
