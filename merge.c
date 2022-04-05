@@ -1,5 +1,17 @@
 #include <stdio.h>
 
+/*
+** Inputs Given by command line from main
+** ./merge.c xHigh yHigh xArry[] yArr[]
+*/
+
+/*
+** TODO Still
+**
+**
+**
+*/
+
 void findLocation(int xArr[], int yArr[], int xToFind, int ySize,
                   int fArray[]) {
   int posHolder = 0;
