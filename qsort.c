@@ -1,6 +1,13 @@
-#include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <unistd.h> //For wait() probably can delete later
+
+#include <sys/ipc.h>
+#include <sys/shm.h>
+#include <sys/types.h>
+#include <sys/wait.h>
+
+#include <math.h>
 #include <time.h>
 
 /*
@@ -32,15 +39,31 @@ void sort(int low, int high, int *arr) {
     **
     */
     int partition = getPart(low, high, arr);
-
     printf("\n\n--------Sort--------\n");
     printf("--------Low: %d\t High:%d\tPartition: %d\n\n", low, high,
            partition);
-    sort(low, partition - 1, arr);
-    sort(partition + 1, high, arr);
+
+    if (fork() == 0) {
+      sort(low, partition - 1, arr);
+      exit(1);
+    }
+
+    if (fork() == 0) {
+      sort(partition + 1, high, arr);
+      exit(1);
+    } else {
+      for (int i = 0; i < 2; i++) {
+        int status;
+        pid_t child_t;
+        child_t = wait(&status);
+        printf("Child [%d] terminated with status [%d]\n", child_t, status);
+      }
+    }
+
   } else {
     printf("\n\n&&&&&&&&No Sort&&&&&&&&\n");
     printf("&&&&&&&&Low: %d\t High:%d\n\n", low, high);
+    exit(1);
   }
 }
 /*
@@ -108,12 +131,25 @@ void swap(int loc1, int loc2, int *arr) {
 //
 */
 int main(int argc, char *argv[]) {
-  int numArray[] = {667, 517, 520, 416, 362, 707, 779, 89, 280, 395};
-  // printArr(0, 9, numArray);
-  sort(0, 9, numArray);
-  printf("Final Sorted Array\n");
-  printArr(0, 9, numArray);
-  finalCheck(9, numArray);
+  int qSID = atoi(argv[1]);
+  int qHigh = atoi(argv[2]);
+
+  int *qArr, status;
+
+  qArr = (int *)shmat(qSID, NULL, 0);
+  // int numArray[] = {667, 517, 520, 416, 362, 707, 779, 89, 280, 395};
+  printArr(0, qHigh, qArr);
+  sort(0, qHigh, qArr);
+  // printf("Final Sorted Array\n");
+  printf("FINAL QSORT PRINT\n");
+  printArr(0, qHigh, qArr);
+
+  // Detaching Memory from shared Qsort
+  if (shmdt(qArr) < 0) {
+    printf("Failed to Detach Memory from Qsort");
+  }
+
+  // finalCheck(9, numArray);
   return 0;
 }
 /*
